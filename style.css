@@ -336,7 +336,30 @@
     .roster-table td {
       padding: 18px 12px;
       border-bottom: 1px solid var(--color-brown-line);
-      vertical-align: top;
+      vertical-align: middle;
+    }
+
+    .roster-avatar-cell {
+      width: 68px;
+      padding-right: 4px;
+    }
+
+    .roster-avatar {
+      width: 52px;
+      height: 52px;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      border: 1px solid var(--color-brown-line);
+      background-color: var(--color-base-subtle);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .roster-table tbody tr:hover .roster-avatar {
+      transform: scale(1.04);
+      border-color: var(--color-green-accent);
     }
 
     .role-badge {
