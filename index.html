@@ -6,7 +6,7 @@
   <title>CurveQz — AI-Powered Inventory & Demand Forecasting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -17,7 +17,7 @@
     <div class="container">
       <nav class="navbar">
         <a href="#" class="navbar-brand">
-          <span class="masthead-dot"></span>
+          <img src="assist/logo.png" alt="CurveQz Logo" class="brand-logo" />
           <span>CURVEQZ</span>
           <span class="brand-sub">· PIM</span>
         </a>
@@ -34,24 +34,83 @@
   <!-- Hero Section -->
   <section class="hero hairline-bottom">
     <div class="container">
-      <span class="hero-kicker">Machine Learning & Decision Support</span>
-      <h1 class="hero-title">CurveQz</h1>
-      <p class="hero-subtitle">พวกเราอยากช่วยให้ร้านอาหารสั่งวัตถุดิบได้พอดีกับยอดขาย โดยใช้ข้อมูลร่วมกับประสบการณ์ของผู้จัดการ เพื่อลดของเหลือทิ้งและวางแผนต้นทุนได้ดีขึ้น</p>
-
-      <!-- Decorative SVG: Topological Flow & Balance Linework -->
-      <div class="deco-graphic-container" aria-hidden="true">
-        <svg width="100%" height="100%" viewBox="0 0 1000 120" fill="none" preserveAspectRatio="none">
-          <line x1="0" y1="60" x2="1000" y2="60" stroke="#DECFC3" stroke-width="1" stroke-dasharray="4 6" />
-          <path d="M0,60 C150,20 250,95 400,50 C550,5 680,105 820,40 C910,2 960,50 1000,60" stroke="#3A694A" stroke-width="1.75" fill="none" />
-          <path d="M0,60 C180,85 300,30 450,75 C600,120 720,25 850,80 C930,100 970,70 1000,60" stroke="#7A5B49" stroke-width="1" stroke-opacity="0.7" fill="none" />
-          <!-- Crosshair and coordinate markers -->
-          <circle cx="400" cy="50" r="3.5" fill="#3A694A" />
-          <circle cx="820" cy="40" r="3" fill="#7A5B49" />
-          <line x1="400" y1="20" x2="400" y2="80" stroke="#3A694A" stroke-width="0.75" stroke-dasharray="2 2" />
-          <line x1="820" y1="15" x2="820" y2="65" stroke="#7A5B49" stroke-width="0.75" stroke-dasharray="2 2" />
-        </svg>
+      <div class="hero-header-block">
+        <span class="hero-kicker">Machine Learning & Decision Support</span>
+        <h1 class="hero-title">CurveQz</h1>
+        <p class="hero-subtitle">พวกเราอยากช่วยให้ร้านอาหารสั่งวัตถุดิบได้พอดีกับยอดขาย โดยใช้ข้อมูลร่วมกับประสบการณ์ของผู้จัดการ เพื่อลดของเหลือทิ้งและวางแผนต้นทุนได้ดีขึ้น</p>
       </div>
 
+      <!-- Architectural Hero Visual: Demand Curve & Stock Optimization Flow -->
+      <div class="hero-schematic-frame" aria-hidden="true">
+        <div class="schematic-header">
+          <div class="schematic-meta-left">
+            <span class="schematic-tag">CURVEQZ ENGINE // MULTI-FACTOR FLOW</span>
+            <span class="schematic-sub">การจำแนกเส้นความต้องการและระดับสต็อกปลอดภัย (Demand & Safety Stock Variance)</span>
+          </div>
+          <div class="schematic-meta-right">
+            <span class="schematic-badge"><span class="badge-dot"></span> REAL-TIME POS HARMONIZATION</span>
+          </div>
+        </div>
+
+        <!-- Responsive Milestone Callouts (HTML/CSS - 0% Distortion) -->
+        <div class="schematic-milestones">
+          <div class="milestone-box" style="left: 38%;">
+            <span class="milestone-dot dot-green"></span>
+            <span class="milestone-text">LUNCH PEAK (12:30)</span>
+          </div>
+          <div class="milestone-box" style="left: 74%;">
+            <span class="milestone-dot dot-brown"></span>
+            <span class="milestone-text">DINNER PEAK (19:00)</span>
+          </div>
+        </div>
+
+        <div class="schematic-canvas">
+          <svg width="100%" height="110" viewBox="0 0 1000 110" fill="none" preserveAspectRatio="none">
+            <!-- Grid Lines -->
+            <line x1="0" y1="20" x2="1000" y2="20" stroke="#EFE7DF" stroke-width="1" stroke-dasharray="3 3" />
+            <line x1="0" y1="55" x2="1000" y2="55" stroke="#EFE7DF" stroke-width="1" stroke-dasharray="3 3" />
+            <line x1="0" y1="90" x2="1000" y2="90" stroke="#DECFC3" stroke-width="1" />
+
+            <!-- Shaded Optimal Stock Band -->
+            <path d="M0,80 C160,55 240,18 380,20 C520,22 600,75 740,38 C840,18 900,32 1000,45 L1000,90 L0,90 Z" fill="#3A694A" fill-opacity="0.06" />
+
+            <!-- Safety Buffer Boundary Line -->
+            <path d="M0,65 C160,40 240,6 380,8 C520,10 600,60 740,24 C840,6 900,18 1000,30" stroke="#7A5B49" stroke-width="1.5" stroke-dasharray="4 4" />
+
+            <!-- Primary Predicted Demand Curve -->
+            <path d="M0,80 C160,55 240,18 380,20 C520,22 600,75 740,38 C840,18 900,32 1000,45" stroke="#3A694A" stroke-width="2.5" stroke-linecap="round" />
+
+            <!-- Historical Sales Baseline -->
+            <path d="M0,86 C160,75 240,45 380,42 C520,40 600,80 740,58 C840,40 900,48 1000,55" stroke="#DECFC3" stroke-width="1.5" stroke-dasharray="2 3" />
+
+            <!-- Peak Indicators Vertical Dashes -->
+            <line x1="380" y1="20" x2="380" y2="90" stroke="#3A694A" stroke-width="1" stroke-dasharray="2 2" />
+            <circle cx="380" cy="20" r="4" fill="#FFFFFF" stroke="#3A694A" stroke-width="2" />
+
+            <line x1="740" y1="38" x2="740" y2="90" stroke="#7A5B49" stroke-width="1" stroke-dasharray="2 2" />
+            <circle cx="740" cy="38" r="4" fill="#FFFFFF" stroke="#7A5B49" stroke-width="2" />
+          </svg>
+        </div>
+
+        <!-- Timeline Axis (HTML/CSS - Crisp, never squished!) -->
+        <div class="schematic-timeline">
+          <span>06:00 PREP</span>
+          <span>12:00 SERVICE</span>
+          <span>18:30 EVENING</span>
+          <span>22:00 AUDIT</span>
+        </div>
+
+        <div class="schematic-footer">
+          <div class="schematic-legend">
+            <span><span style="color: #3A694A; font-weight: bold;">―</span> เส้นความต้องการที่พยากรณ์ (Predicted Demand)</span>
+            <span><span style="color: #7A5B49; font-weight: bold;">┄</span> แนวรับสต็อกปลอดภัย (Safety Buffer Boundary)</span>
+            <span><span style="color: #DECFC3; font-weight: bold;">┈</span> ฐานยอดขายเดิม (Baseline Consumption)</span>
+          </div>
+          <div class="schematic-meta-end">
+            <span>DATA HARMONIZED ACROSS 54+ INVENTORY PARAMETERS</span>
+          </div>
+        </div>
+      </div>
       <!-- Operational Scope & Capabilities -->
       <div class="metrics-strip hairline-top">
         <div class="metric-item">
@@ -76,35 +135,71 @@
   <!-- 1. ปัญหา (The Problem) -->
   <section id="problem" class="section-block hairline-bottom">
     <div class="container">
-      <div class="editorial-grid">
-        <div class="section-meta">
-          <h2 class="section-title">ความท้าทาย<br />ในการบริหารสต็อก</h2>
-          <p class="section-summary">สั่งมากไปก็เหลือทิ้ง สั่งน้อยไปก็ไม่พอขาย นี่คือปัญหาที่เราเลือกนำมาศึกษา</p>
-        </div>
-        <div class="editorial-content">
-          <p class="lead-text">จากการวิเคราะห์ของทีม ร้านอาหารที่มีหลายสาขาต้องวางแผนของสดให้สอดคล้องกับลูกค้าที่ต่างกันในแต่ละพื้นที่ เราจึงสนใจว่าข้อมูลจะช่วยให้แต่ละสาขาสั่งของได้เหมาะสมขึ้นอย่างไร</p>
+      <div class="section-header">
+        <h2 class="section-title">ความท้าทายในการบริหารสต็อก</h2>
+        <p class="section-summary">สั่งมากไปก็เหลือทิ้ง สั่งน้อยไปก็ไม่พอขาย นี่คือปัญหาที่เราเลือกนำมาศึกษา</p>
+      </div>
 
-          <div class="editorial-list">
-            <div class="editorial-item">
-              <div class="item-label">Overstocking & Waste</div>
-              <div class="item-description">ประสบการณ์ช่วยให้ผู้จัดการประเมินยอดขายได้ แต่เมื่อความต้องการเปลี่ยนไป การใช้ความคุ้นเคยเพียงอย่างเดียวอาจไม่พอ หากสำรองของมากเกินจำเป็น วัตถุดิบบางส่วนอาจเสื่อมคุณภาพก่อนนำไปใช้ กลายเป็นต้นทุนที่ร้านต้องรับภาระ</div>
-            </div>
+      <div class="section-body">
+        <p class="lead-text">จากการวิเคราะห์ของทีม ร้านอาหารที่มีหลายสาขาต้องวางแผนของสดให้สอดคล้องกับลูกค้าที่ต่างกันในแต่ละพื้นที่ เราจึงสนใจว่าข้อมูลจะช่วยให้แต่ละสาขาสั่งของได้เหมาะสมขึ้นอย่างไร</p>
 
-            <div class="editorial-item">
-              <div class="item-label">Understocking & Lost Sales</div>
-              <div class="item-description">วันหยุด โปรโมชัน หรือกิจกรรมใกล้ร้านอาจทำให้ยอดขายสูงกว่าคาด ส่วนสภาพอากาศอาจส่งผลต่างกันในแต่ละสาขา หากเตรียมของไม่ทัน ร้านอาจต้องหยุดขายบางเมนูและเสียโอกาสสร้างรายได้</div>
-            </div>
-
-            <div class="editorial-item">
-              <div class="item-label">Recipe-to-Ingredient Gap</div>
-              <div class="item-description">แม้ร้านจะรู้ว่าขายแต่ละเมนูได้กี่จาน แต่ยังต้องคำนวณต่อว่าควรเตรียมเนื้อสัตว์ ผัก และเครื่องปรุงเท่าไร โดยเฉพาะวัตถุดิบที่ใช้ร่วมกันหลายเมนู งานส่วนนี้จึงใช้เวลาและมีโอกาสผิดพลาด</div>
-            </div>
-
-            <div class="editorial-item">
-              <div class="item-label">Limited HQ Visibility</div>
-              <div class="item-description">หากแต่ละสาขาสั่งซื้อและบันทึกข้อมูลแยกกัน ส่วนกลางอาจรวบรวมข้อมูลได้ไม่ทัน ทำให้มองเห็นได้ยากว่าสาขาใดมีของเหลือทิ้งมาก หรือควรปรับแผนการสั่งซื้ออย่างไร</div>
-            </div>
+        <!-- 2x2 Problem Grid (Full Width, Perfectly Balanced) -->
+        <div class="problem-grid">
+          <div class="problem-card">
+            <div class="item-label">Overstocking & Waste</div>
+            <div class="item-description">ประสบการณ์ช่วยให้ผู้จัดการประเมินยอดขายได้ แต่เมื่อความต้องการเปลี่ยนไป การใช้ความคุ้นเคยเพียงอย่างเดียวอาจไม่พอ หากสำรองของมากเกินจำเป็น วัตถุดิบบางส่วนอาจเสื่อมคุณภาพก่อนนำไปใช้ กลายเป็นต้นทุนที่ร้านต้องรับภาระ</div>
           </div>
+
+          <div class="problem-card">
+            <div class="item-label">Understocking & Lost Sales</div>
+            <div class="item-description">วันหยุด โปรโมชัน หรือกิจกรรมใกล้ร้านอาจทำให้ยอดขายสูงกว่าคาด ส่วนสภาพอากาศอาจส่งผลต่างกันในแต่ละสาขา หากเตรียมของไม่ทัน ร้านอาจต้องหยุดขายบางเมนูและเสียโอกาสสร้างรายได้</div>
+          </div>
+
+          <div class="problem-card">
+            <div class="item-label">Recipe-to-Ingredient Gap</div>
+            <div class="item-description">แม้ร้านจะรู้ว่าขายแต่ละเมนูได้กี่จาน แต่ยังต้องคำนวณต่อว่าควรเตรียมเนื้อสัตว์ ผัก และเครื่องปรุงเท่าไร โดยเฉพาะวัตถุดิบที่ใช้ร่วมกันหลายเมนู งานส่วนนี้จึงใช้เวลาและมีโอกาสผิดพลาด</div>
+          </div>
+
+          <div class="problem-card">
+            <div class="item-label">Limited HQ Visibility</div>
+            <div class="item-description">หากแต่ละสาขาสั่งซื้อและบันทึกข้อมูลแยกกัน ส่วนกลางอาจรวบรวมข้อมูลได้ไม่ทัน ทำให้มองเห็นได้ยากว่าสาขาใดมีของเหลือทิ้งมาก หรือควรปรับแผนการสั่งซื้ออย่างไร</div>
+          </div>
+        </div>
+
+        <!-- Structured Comparison Spec Sheet (Full Width) -->
+        <div class="spec-table-wrapper">
+          <div class="spec-table-title">ตารางเปรียบเทียบมิติการบริหารจัดการวัตถุดิบ</div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th style="width: 22%;">มิติการทำงาน</th>
+                <th style="width: 38%;">การสั่งซื้อแบบดั้งเดิม (Manual Guesswork)</th>
+                <th style="width: 40%;">แนวทางของ CurveQz (Data-Informed Model)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="spec-dim">การคาดเดายอดขาย</td>
+                <td>อิงความจำและความคุ้นเคยของผู้จัดการสาขาเป็นหลัก</td>
+                <td>นำยอดขายจริงย้อนหลังผสานสภาพอากาศ วันหยุด และโปรโมชัน</td>
+              </tr>
+              <tr>
+                <td class="spec-dim">การแปลงสูตรอาหาร</td>
+                <td>ใช้การกะปริมาณด้วยสายตาหรือคำนวณแยกทีละเมนู</td>
+                <td>คำนวณอัตโนมัติผ่าน Recipe BOM รวมวัตถุดิบสดที่ใช้ร่วมกัน</td>
+              </tr>
+              <tr>
+                <td class="spec-dim">การควบคุมของเสีย</td>
+                <td>มักทราบยอดสูญเสียหลังของหมดอายุและต้องทิ้งแล้ว</td>
+                <td>ประเมินอัตราหมุนเวียนล่วงหน้าตามอายุเก็บรักษา (Shelf-Life)</td>
+              </tr>
+              <tr>
+                <td class="spec-dim">บทบาทผู้จัดการ</td>
+                <td>เสียเวลาหน้างานไปกับการคำนวณตัวเลขและกรอกใบสั่งของ</td>
+                <td>เป็นผู้อนุมัติขั้นสุดท้าย (Human-in-the-Loop) โดยมีระบบช่วยเตรียมข้อมูล</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -113,31 +208,40 @@
   <!-- 2. วิสัยทัศน์และจุดประสงค์ (Vision & Objectives) -->
   <section id="vision" class="section-block hairline-bottom">
     <div class="container">
-      <div class="editorial-grid">
-        <div class="section-meta">
-          <h2 class="section-title">วิสัยทัศน์และ<br />วัตถุประสงค์</h2>
-          <p class="section-summary">ช่วยให้ผู้จัดการมีข้อมูลประกอบการตัดสินใจ และใช้เวลากับงานคำนวณน้อยลง</p>
+      <div class="section-header">
+        <h2 class="section-title">วิสัยทัศน์และวัตถุประสงค์</h2>
+        <p class="section-summary">ช่วยให้ผู้จัดการมีข้อมูลประกอบการตัดสินใจ และใช้เวลากับงานคำนวณน้อยลง</p>
+      </div>
+
+      <div class="section-body">
+        <div class="vision-block">
+          <blockquote class="vision-quote">“เราอยากให้ผู้จัดการใช้ข้อมูลร่วมกับประสบการณ์ในการวางแผน โดยมีระบบช่วยคำนวณงานที่ซ้ำและใช้เวลา เพื่อให้มีเวลาตรวจสถานการณ์จริงและตัดสินใจได้รอบคอบขึ้น”</blockquote>
         </div>
-        <div class="editorial-content">
-          <div class="vision-block">
-            <blockquote class="vision-quote">“เราอยากให้ผู้จัดการใช้ข้อมูลร่วมกับประสบการณ์ในการวางแผน โดยมีระบบช่วยคำนวณงานที่ซ้ำและใช้เวลา เพื่อให้มีเวลาตรวจสถานการณ์จริงและตัดสินใจได้รอบคอบขึ้น”</blockquote>
+
+        <!-- 3-Column Objective Grid (Full Width) -->
+        <div class="objectives-grid">
+          <div class="objective-card">
+            <div class="obj-header">
+              <span class="item-index">[ 01 ]</span>
+              <span class="obj-title">ควบคุมต้นทุนวัตถุดิบ</span>
+            </div>
+            <div class="item-description">เราจะติดตามปริมาณและมูลค่าวัตถุดิบที่ทิ้ง เทียบกับช่วงก่อนทดลองใช้ พร้อมดูเหตุการณ์ของขาด เพื่อให้การลดของเสียไม่กระทบต่อความพร้อมในการขาย</div>
           </div>
 
-          <div class="editorial-list">
-            <div class="editorial-item">
-              <div class="item-label">ควบคุมต้นทุนวัตถุดิบ</div>
-              <div class="item-description">เราจะติดตามปริมาณและมูลค่าวัตถุดิบที่ทิ้ง เทียบกับช่วงก่อนทดลองใช้ พร้อมดูเหตุการณ์ของขาด เพื่อให้การลดของเสียไม่กระทบต่อความพร้อมในการขาย</div>
+          <div class="objective-card">
+            <div class="obj-header">
+              <span class="item-index">[ 02 ]</span>
+              <span class="obj-title">วางแผนใช้ของสดให้ทันเวลา</span>
             </div>
+            <div class="item-description">วางแผนใช้วัตถุดิบให้สอดคล้องกับอายุการเก็บรักษาและความต้องการ เพื่อลดของค้างสต็อก โดยยังต้องอาศัยการตรวจคุณภาพจากพนักงานหน้างาน</div>
+          </div>
 
-            <div class="editorial-item">
-              <div class="item-label">วางแผนใช้ของสดให้ทันเวลา</div>
-              <div class="item-description">วางแผนใช้วัตถุดิบให้สอดคล้องกับอายุการเก็บรักษาและความต้องการ เพื่อลดของค้างสต็อก โดยยังต้องอาศัยการตรวจคุณภาพจากพนักงานหน้างาน</div>
+          <div class="objective-card">
+            <div class="obj-header">
+              <span class="item-index">[ 03 ]</span>
+              <span class="obj-title">ลดเวลาเตรียมรายการสั่งซื้อ</span>
             </div>
-
-            <div class="editorial-item">
-              <div class="item-label">ลดเวลาเตรียมรายการสั่งซื้อ</div>
-              <div class="item-description">ให้ระบบเตรียมรายการสั่งซื้อเบื้องต้น แล้วผู้จัดการตรวจสอบและปรับแก้ เราจะวัดเวลาที่ใช้ก่อนและหลังทดลอง แทนการรับรองล่วงหน้าว่าจะลดเวลาได้เท่าไร</div>
-            </div>
+            <div class="item-description">ให้ระบบเตรียมรายการสั่งซื้อเบื้องต้น แล้วผู้จัดการตรวจสอบและปรับแก้ เราจะวัดเวลาที่ใช้ก่อนและหลังทดลอง แทนการรับรองล่วงหน้าว่าจะลดเวลาได้เท่าไร</div>
           </div>
         </div>
       </div>
@@ -147,12 +251,11 @@
   <!-- 3. โปรดักส์และเทคโนโลยี (Product & Architecture) -->
   <section id="solution" class="section-block hairline-bottom">
     <div class="container">
-      <div class="editorial-grid">
-        <div class="section-meta">
-          <h2 class="section-title">แนวทางพัฒนาระบบ<br />และ Machine Learning</h2>
-          <p class="section-summary">เชื่อมยอดขาย สูตรอาหาร และสต็อกเข้าด้วยกัน เพื่อช่วยวางแผนการสั่งซื้อ</p>
-        </div>
-        <div class="editorial-content">
+      <div class="section-header">
+        <h2 class="section-title">แนวทางพัฒนาระบบและ Machine Learning</h2>
+        <p class="section-summary">เชื่อมยอดขาย สูตรอาหาร และสต็อกเข้าด้วยกัน เพื่อช่วยวางแผนการสั่งซื้อ</p>
+      </div>
+      <div class="section-body">
           <p class="lead-text">CurveQz มีแนวทางช่วยตอบคำถามว่า “รอบถัดไปควรสั่งวัตถุดิบอะไร และเท่าไร” โดยเริ่มทดสอบจากไฟล์ยอดขาย ก่อนพัฒนาการเชื่อมต่อ POS ผ่าน API ตามข้อมูลและเงื่อนไขที่ผู้ให้บริการรองรับ</p>
 
           <!-- System Flow Grid -->
@@ -182,23 +285,56 @@
             </div>
           </div>
 
-          <!-- Decorative Fine Linework Diagram -->
-          <div style="margin-top: 16px; border: 1px solid var(--color-brown-line); padding: 24px; background: var(--color-base-subtle);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-              <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-brown-muted);">ตัวอย่างสัดส่วนปัจจัยในการพยากรณ์</span>
-              <span style="font-size: 11px; color: var(--color-green-accent);">ILLUSTRATIVE ONLY</span>
+          <!-- Interactive Recipe BOM Explorer -->
+          <div class="bom-explorer-card">
+            <div class="bom-header">
+              <div>
+                <span class="sim-tag">RECIPE BILL OF MATERIALS (BOM)</span>
+                <h4 style="font-size: 18px; margin-top: 4px; color: var(--color-brown-ink);">โครงสร้างการแยกส่วนวัตถุดิบสดต่อเมนู</h4>
+              </div>
+              <!-- Tab Switcher -->
+              <div class="bom-tabs">
+                <button type="button" class="bom-tab active" data-dish="basil">ข้าวกะเพราหมูสับ</button>
+                <button type="button" class="bom-tab" data-dish="curry">ผัดพริกแกงไก่</button>
+                <button type="button" class="bom-tab" data-dish="tomyum">ต้มยำกุ้งน้ำใส</button>
+              </div>
             </div>
-            <svg width="100%" height="40" viewBox="0 0 700 40" fill="none">
+
+            <div class="bom-table-container">
+              <table class="bom-table">
+                <thead>
+                  <tr>
+                    <th>วัตถุดิบสด</th>
+                    <th>สัดส่วนต่อ 1 จาน</th>
+                    <th>อายุของสด (Shelf-life)</th>
+                    <th>ระดับความเสี่ยงเน่าเสีย</th>
+                    <th>คำแนะนำการบริหารสต็อก</th>
+                  </tr>
+                </thead>
+                <tbody id="bomTableBody">
+                  <!-- Injected via JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Fine Linework Factor Weight Breakdown -->
+          <div class="factor-breakdown-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+              <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-brown-muted);">ตัวอย่างสัดส่วนปัจจัยในการพยากรณ์ (Illustrative Weight Model)</span>
+              <span class="factor-version">SYS.WEIGHT // V1.2</span>
+            </div>
+            <svg width="100%" height="32" viewBox="0 0 700 32" fill="none">
               <!-- Historical Trend (Earth Green Accent) -->
-              <rect x="0" y="14" width="280" height="12" fill="#3A694A" />
+              <rect x="0" y="10" width="280" height="12" fill="#3A694A" />
               <!-- Weather & Environment (Sage Green) -->
-              <rect x="284" y="14" width="160" height="12" fill="#5A8567" />
+              <rect x="284" y="10" width="160" height="12" fill="#5A8567" />
               <!-- Events & Calendar (Earth Brown) -->
-              <rect x="448" y="14" width="140" height="12" fill="#7A5B49" />
+              <rect x="448" y="10" width="140" height="12" fill="#7A5B49" />
               <!-- Marketing Promotions (Warm Sand) -->
-              <rect x="592" y="14" width="108" height="12" fill="#DECFC3" />
+              <rect x="592" y="10" width="108" height="12" fill="#DECFC3" />
             </svg>
-            <div style="display: flex; justify-content: space-between; font-size: 12px; color: var(--color-brown-body); margin-top: 8px;">
+            <div class="factor-legend-row">
               <span><span style="color: #3A694A;">■</span> ยอดขายย้อนหลัง (40%)</span>
               <span><span style="color: #5A8567;">■</span> สภาพอากาศ (23%)</span>
               <span><span style="color: #7A5B49;">■</span> ปฏิทิน/อีเวนต์ (20%)</span>
@@ -207,81 +343,143 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- 4. โครงสร้างทีมงานและบทบาทหน้าที่ (Organization & Team Structure) -->
   <section id="team" class="section-block hairline-bottom">
     <div class="container">
-      <div class="editorial-grid">
-        <div class="section-meta">
-          <h2 class="section-title">โครงสร้างทีมและ<br />บทบาทหน้าที่</h2>
-          <p class="section-summary">พวกเราเป็นทีมนักศึกษาจาก PIM ที่แบ่งหน้าที่กันพัฒนาโครงการ CurveQz</p>
-        </div>
-        <div class="editorial-content">
+      <div class="section-header">
+        <h2 class="section-title">โครงสร้างทีมและบทบาทหน้าที่</h2>
+        <p class="section-summary">พวกเราเป็นทีมนักศึกษาจาก PIM ที่แบ่งหน้าที่กันพัฒนาโครงการ CurveQz</p>
+      </div>
+      <div class="section-body">
+          <div class="table-responsive">
           <table class="roster-table">
             <thead>
               <tr>
                 <th style="width: 72px;">รูปสมาชิก</th>
-                <th style="width: 160px;">ตำแหน่ง (Role)</th>
-                <th style="width: 210px;">ชื่อ–นามสกุล / รหัสนักศึกษา</th>
-                <th>ขอบเขตความรับผิดชอบหลักในโครงการ</th>
+                <th style="width: 170px;">ตำแหน่ง (Role)</th>
+                <th style="width: 220px;">ชื่อ–นามสกุล / รหัสนักศึกษา</th>
+                <th>ขอบเขตความรับผิดชอบหลัก & ความเชี่ยวชาญในโครงการ</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="roster-avatar-cell"><img src="assist/soda.png" alt="นายศนุชา สอนเดช" class="roster-avatar" /></td>
                 <td><span class="role-badge">CEO & DATA</span></td>
-                <td><strong>นายศนุชา สอนเดช</strong><br /><span style="font-size: 12px; color: var(--color-brown-muted);">6752300542</span></td>
-                <td>กำหนดทิศทางโครงการ ประเมินความคุ้มค่าทางธุรกิจ และออกแบบกระบวนการจัดการข้อมูลกับโครงสร้างสูตรอาหาร (Data Pipeline & Recipe BOM)</td>
+                <td>
+                  <strong>นายศนุชา สอนเดช</strong><br />
+                  <span class="student-id">6752300542</span>
+                </td>
+                <td>
+                  กำหนดทิศทางโครงการ ประเมินความคุ้มค่าทางธุรกิจ และออกแบบกระบวนการจัดการข้อมูลกับโครงสร้างสูตรอาหาร (Data Pipeline & Recipe BOM)
+                  <div class="tech-tags">
+                    <span class="tech-tag">Business Strategy</span>
+                    <span class="tech-tag">Data Pipeline</span>
+                    <span class="tech-tag">Recipe BOM</span>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td class="roster-avatar-cell"><img src="assist/nut.png" alt="นายนัธทวัฒน์ อุ้มญาติ" class="roster-avatar" /></td>
                 <td><span class="role-badge">CTO</span></td>
-                <td><strong>นายนัธทวัฒน์ อุ้มญาติ</strong><br /><span style="font-size: 12px; color: var(--color-brown-muted);">6752300364</span></td>
-                <td>ออกแบบสถาปัตยกรรมระบบ กำกับการพัฒนาระบบหลังบ้าน การเชื่อมต่อ POS API และการประมวลผลด้วย Machine Learning</td>
+                <td>
+                  <strong>นายนัธทวัฒน์ อุ้มญาติ</strong><br />
+                  <span class="student-id">6752300364</span>
+                </td>
+                <td>
+                  ออกแบบสถาปัตยกรรมระบบ กำกับการพัฒนาระบบหลังบ้าน การเชื่อมต่อ POS API และการประมวลผลด้วย Machine Learning
+                  <div class="tech-tags">
+                    <span class="tech-tag">System Architecture</span>
+                    <span class="tech-tag">FastAPI / Python</span>
+                    <span class="tech-tag">ML Modeling</span>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td class="roster-avatar-cell"><img src="assist/tonkla.png" alt="นายอาณัติ หลีเกี๊ยะ" class="roster-avatar" /></td>
                 <td><span class="role-badge">DEVOPS</span></td>
-                <td><strong>นายอาณัติ หลีเกี๊ยะ</strong><br /><span style="font-size: 12px; color: var(--color-brown-muted);">6752300666</span></td>
-                <td>ดูแลโครงสร้างพื้นฐานคลาวด์ การจัดสภาพแวดล้อมด้วย Docker และกระบวนการทดสอบและส่งมอบระบบอัตโนมัติ (CI/CD) รวมถึงการนำโมเดลไปใช้งาน</td>
+                <td>
+                  <strong>นายอาณัติ หลีเกี๊ยะ</strong><br />
+                  <span class="student-id">6752300666</span>
+                </td>
+                <td>
+                  ดูแลโครงสร้างพื้นฐานคลาวด์ การจัดสภาพแวดล้อมด้วย Docker และกระบวนการทดสอบและส่งมอบระบบอัตโนมัติ (CI/CD) รวมถึงการนำโมเดลไปใช้งาน
+                  <div class="tech-tags">
+                    <span class="tech-tag">Docker Containers</span>
+                    <span class="tech-tag">CI/CD Pipeline</span>
+                    <span class="tech-tag">Cloud Deploy</span>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td class="roster-avatar-cell"><img src="assist/ter.png" alt="นายกษิดิ์เดช คู่คิด" class="roster-avatar" /></td>
                 <td><span class="role-badge">SECURITY & IT OPS</span></td>
-                <td><strong>นายกษิดิ์เดช คู่คิด</strong><br /><span style="font-size: 12px; color: var(--color-brown-muted);">6752300712</span></td>
-                <td>ดูแลความมั่นคงปลอดภัยของระบบและข้อมูล กำหนดสิทธิ์การเข้าถึง API และติดตามความพร้อมใช้งานของระบบ</td>
+                <td>
+                  <strong>นายกษิดิ์เดช คู่คิด</strong><br />
+                  <span class="student-id">6752300712</span>
+                </td>
+                <td>
+                  ดูแลความมั่นคงปลอดภัยของระบบและข้อมูล กำหนดสิทธิ์การเข้าถึง API และติดตามความพร้อมใช้งานของระบบ
+                  <div class="tech-tags">
+                    <span class="tech-tag">API Authentication</span>
+                    <span class="tech-tag">Access Control</span>
+                    <span class="tech-tag">Log Monitoring</span>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td class="roster-avatar-cell"><img src="assist/kong.png" alt="นายก้องภพ สุขทรัพย์" class="roster-avatar" /></td>
                 <td><span class="role-badge">QA</span></td>
-                <td><strong>นายก้องภพ สุขทรัพย์</strong><br /><span style="font-size: 12px; color: var(--color-brown-muted);">6752300534</span></td>
-                <td>วางแผนและดำเนินการทดสอบคุณภาพซอฟต์แวร์ ตรวจสอบการคำนวณวัตถุดิบและคำแนะนำสั่งซื้อ รวมถึงประสานการทดสอบการยอมรับโดยผู้ใช้ (UAT)</td>
+                <td>
+                  <strong>นายก้องภพ สุขทรัพย์</strong><br />
+                  <span class="student-id">6752300534</span>
+                </td>
+                <td>
+                  วางแผนและดำเนินการทดสอบคุณภาพซอฟต์แวร์ ตรวจสอบการคำนวณวัตถุดิบและคำแนะนำสั่งซื้อ รวมถึงประสานการทดสอบการยอมรับโดยผู้ใช้ (UAT)
+                  <div class="tech-tags">
+                    <span class="tech-tag">UAT Testing</span>
+                    <span class="tech-tag">Calculation Audit</span>
+                    <span class="tech-tag">Edge Cases</span>
+                  </div>
+                </td>
               </tr>
               <tr>
                 <td class="roster-avatar-cell"><img src="assist/phai.png" alt="นางสาวธนัชพร ช่วยนาค" class="roster-avatar" /></td>
                 <td><span class="role-badge">UX/UI & MARKET</span></td>
-                <td><strong>นางสาวธนัชพร ช่วยนาค</strong><br /><span style="font-size: 12px; color: var(--color-brown-muted);">6752300861</span></td>
-                <td>ศึกษาความต้องการของผู้ใช้และตลาด ออกแบบประสบการณ์และส่วนติดต่อผู้ใช้ (UX/UI) สำหรับผู้จัดการสาขาและแดชบอร์ดสำนักงานใหญ่</td>
+                <td>
+                  <strong>นางสาวธนัชพร ช่วยนาค</strong><br />
+                  <span class="student-id">6752300861</span>
+                </td>
+                <td>
+                  ศึกษาความต้องการของผู้ใช้และตลาด ออกแบบประสบการณ์และส่วนติดต่อผู้ใช้ (UX/UI) สำหรับผู้จัดการสาขาและแดชบอร์ดสำนักงานใหญ่
+                  <div class="tech-tags">
+                    <span class="tech-tag">Figma Design</span>
+                    <span class="tech-tag">User Flow</span>
+                    <span class="tech-tag">Market Research</span>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="footer-flex hairline-top" style="padding-top: 32px;">
-        <div>
-          <strong>ทีม CurveQz</strong> — Applied IT & AI Research<br />
-          <span style="color: var(--color-brown-muted);">สถาบันการจัดการปัญญาภิวัฒน์ (Panyapiwat Institute of Management)</span>
+      <div class="footer-flex hairline-top">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <img src="assist/logo.png" alt="CurveQz Logo" class="footer-logo" />
+          <div>
+            <strong>ทีม CurveQz</strong> — Applied IT & AI Research<br />
+            <span style="color: var(--color-brown-muted);">สถาบันการจัดการปัญญาภิวัฒน์ (Panyapiwat Institute of Management)</span>
+          </div>
         </div>
-        <div style="font-size: 12px;">
-          <a href="https://github.com/CurveQz" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: var(--color-brown-ink);">
+        <div style="font-size: 13px;">
+          <a href="https://github.com/CurveQz" target="_blank" rel="noopener noreferrer" class="footer-link">
             github.com/CurveQz
           </a>
         </div>
