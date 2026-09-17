@@ -38,11 +38,11 @@
 
 /* Section Layout (Full-Width Top-Header Swiss Architecture) */
 .section-block {
-  padding: 88px 0;
+  padding: 40px 0;
 }
 
 .section-header {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   max-width: 900px;
 }
 
