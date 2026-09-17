@@ -1,0 +1,192 @@
+/* =======================================================
+   RESPONSIVE — Comprehensive Mobile, Tablet & Desktop
+   NOTE: ไฟล์นี้ต้อง link เป็นไฟล์สุดท้ายสุด เพื่อให้ override
+   ค่าจากไฟล์อื่นได้ถูกต้องตามลำดับ cascade
+   ======================================================= */
+
+@media (max-width: 1024px) {
+  .pipeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 880px) {
+  .container {
+    padding: 0 20px;
+  }
+  
+  .navbar {
+    padding: 14px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  
+  .nav-links {
+    gap: 10px 18px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 13.5px;
+    padding: 4px 0;
+  }
+  
+  .section-block {
+    padding: 64px 0;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .section-summary {
+    font-size: 15px;
+  }
+
+  .section-body {
+    gap: 32px;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .objectives-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .metrics-strip {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 0;
+  }
+
+  .schematic-header, .schematic-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-flex {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 44px 0 36px;
+  }
+
+  .hero-header-block {
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-size: 36px;
+    margin-bottom: 14px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .hero-schematic-frame {
+    margin: 24px 0 36px;
+  }
+
+  .schematic-milestones {
+    display: none; /* Safely hidden on tiny viewports so text never collides */
+  }
+
+  .schematic-header {
+    padding: 12px 16px;
+  }
+
+  .schematic-canvas {
+    padding: 6px 12px;
+  }
+
+  .schematic-timeline {
+    padding: 6px 12px;
+    font-size: 9.5px;
+  }
+
+  .schematic-footer {
+    padding: 12px 16px;
+    gap: 8px;
+  }
+
+  .schematic-legend {
+    gap: 10px;
+    font-size: 11px;
+  }
+
+  .vision-block {
+    padding: 22px 18px;
+  }
+
+  .vision-quote {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .pipeline-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .bom-header {
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .bom-tabs {
+    width: 100%;
+    display: flex;
+  }
+
+  .bom-tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+
+  .factor-breakdown-card {
+    padding: 16px;
+  }
+
+  .factor-legend-row {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .roster-table th, .roster-table td {
+    padding: 12px 10px;
+  }
+
+  .spec-table th, .spec-table td {
+    padding: 10px 12px;
+  }
+
+  .bom-table th, .bom-table td {
+    padding: 10px 12px;
+  }
+
+  footer {
+    padding: 40px 0 60px;
+  }
+}

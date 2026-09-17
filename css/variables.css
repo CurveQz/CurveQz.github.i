@@ -1,0 +1,33 @@
+/* 
+  =======================================================
+  CURVEQZ — SWISS EDITORIAL DESIGN SYSTEM
+  Rule 60-30-10 & Materials:
+  - 60% Dominant Base: Pure White (#FFFFFF) & Archival Linen (#FAF7F2, #F5EFE8)
+  - 30% Structural Typographic Ink: Timber Earth Brown (#3E281C, #563E32, #DECFC3)
+  - 10% Focal Accent: Botanical Deep Sage Green (#3A694A, #5A8567, #EAF2EC)
+  Typography & Layout: Zero AI-slop, zero text distortion, rock-solid responsive
+  =======================================================
+  NOTE: ไฟล์นี้ต้อง link/import เป็นไฟล์แรกสุด เพราะไฟล์อื่นเรียกใช้ตัวแปรจากตรงนี้
+*/
+
+:root {
+  /* 60% Dominant Clean Surfaces */
+  --color-base-white: #FFFFFF;
+  --color-base-subtle: #FAF7F2;
+  --color-base-linen: #F3ECE5;
+
+  /* 30% Earth-tone Brown Structure & Typography */
+  --color-brown-ink: #3E281C;
+  --color-brown-body: #563E32;
+  --color-brown-medium: #7A5B49;
+  --color-brown-muted: #917564;
+  --color-brown-line: #DECFC3;
+  --color-brown-line-light: #EFE7DF;
+  --color-brown-surface: #F8F3EE;
+
+  /* 10% Earth-tone Green Focal Accent */
+  --color-green-accent: #3A694A;
+  --color-green-sage: #5A8567;
+  --color-green-tint: #EAF2EC;
+  --color-green-border: #C2D9C9;
+}

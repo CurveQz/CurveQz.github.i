@@ -1,0 +1,301 @@
+/* =======================================================
+   TABLES — Spec Sheet, Recipe BOM Explorer, Team Roster
+   ======================================================= */
+
+/* Responsive Table Wrapper (CRITICAL FIX: Prevents layout blowout) */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 8px;
+  border: 1px solid var(--color-brown-line);
+  background-color: var(--color-base-white);
+}
+
+/* -------------------------------------------------------
+   Swiss Comparison Spec Sheet
+   ------------------------------------------------------- */
+.spec-table-wrapper {
+  margin-top: 12px;
+  border: 1px solid var(--color-brown-line);
+  background-color: var(--color-base-white);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.spec-table-title {
+  padding: 14px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-brown-ink);
+  background-color: var(--color-brown-surface);
+  border-bottom: 1px solid var(--color-brown-line);
+}
+
+.spec-table {
+  width: 100%;
+  min-width: 580px; /* Ensures columns never squeeze awkwardly */
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.spec-table th {
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-brown-muted);
+  border-bottom: 1px solid var(--color-brown-line);
+  background-color: var(--color-base-subtle);
+}
+
+.spec-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-brown-line-light);
+  line-height: 1.65;
+  vertical-align: top;
+}
+
+.spec-table tr:last-child td {
+  border-bottom: none;
+}
+
+.spec-dim {
+  font-weight: 600;
+  color: var(--color-brown-ink);
+}
+
+/* -------------------------------------------------------
+   Recipe BOM Explorer
+   ------------------------------------------------------- */
+.bom-explorer-card {
+  border: 1px solid var(--color-brown-line);
+  background-color: var(--color-base-white);
+  margin-top: 16px;
+}
+
+.bom-header {
+  padding: 20px 24px;
+  background-color: var(--color-brown-surface);
+  border-bottom: 1px solid var(--color-brown-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.bom-tabs {
+  display: inline-flex;
+  background-color: var(--color-base-white);
+  border: 1px solid var(--color-brown-line);
+  padding: 2px;
+}
+
+.bom-tab {
+  border: none;
+  background: transparent;
+  padding: 6px 14px;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-brown-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.bom-tab:hover {
+  color: var(--color-brown-ink);
+}
+
+.bom-tab.active {
+  background-color: var(--color-brown-ink);
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.bom-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.bom-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.bom-table th {
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-brown-muted);
+  border-bottom: 1px solid var(--color-brown-line);
+  background-color: var(--color-base-subtle);
+  text-align: left;
+}
+
+.bom-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-brown-line-light);
+  vertical-align: middle;
+}
+
+.bom-table tr:last-child td {
+  border-bottom: none;
+}
+
+.portion-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.shelf-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border: 1px solid var(--color-brown-line);
+  background-color: var(--color-base-subtle);
+  color: var(--color-brown-medium);
+}
+
+.risk-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.risk-tag.high {
+  color: #A34E36;
+}
+
+.risk-tag.med {
+  color: #8C6A38;
+}
+
+.risk-tag.low {
+  color: var(--color-green-accent);
+}
+
+/* Factor Breakdown Visualizer */
+.factor-breakdown-card {
+  margin-top: 16px;
+  border: 1px solid var(--color-brown-line);
+  padding: 24px;
+  background: var(--color-base-subtle);
+}
+
+.factor-version {
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--color-green-accent);
+  letter-spacing: 0.04em;
+}
+
+.factor-legend-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-brown-body);
+  margin-top: 10px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* -------------------------------------------------------
+   Team Roster Table
+   ------------------------------------------------------- */
+.roster-table {
+  width: 100%;
+  min-width: 680px; /* Protects columns from squeezing */
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.roster-table th {
+  padding: 16px 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-brown-muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-brown-line);
+  background-color: var(--color-base-subtle);
+}
+
+.roster-table td {
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--color-brown-line);
+  vertical-align: middle;
+}
+
+.roster-avatar-cell {
+  width: 72px;
+}
+
+.roster-avatar {
+  width: 54px;
+  height: 54px;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  border: 1px solid var(--color-brown-line);
+  background-color: var(--color-base-subtle);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.roster-table tbody tr:hover .roster-avatar {
+  transform: scale(1.04);
+  border-color: var(--color-green-accent);
+}
+
+.role-badge {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-green-accent);
+  background-color: var(--color-green-tint);
+  border: 1px solid var(--color-green-border);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.student-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--color-brown-muted);
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tech-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 1px 6px;
+  background-color: var(--color-brown-surface);
+  border: 1px solid var(--color-brown-line);
+  color: var(--color-brown-medium);
+  border-radius: 2px;
+}

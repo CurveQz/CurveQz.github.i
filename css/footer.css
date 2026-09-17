@@ -1,0 +1,28 @@
+/* =======================================================
+   FOOTER
+   ======================================================= */
+
+footer {
+  padding: 56px 0 80px;
+  font-size: 13px;
+  color: var(--color-brown-muted);
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+}
+
+.footer-logo {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.footer-link {
+  text-decoration: underline;
+  color: var(--color-brown-ink);
+}

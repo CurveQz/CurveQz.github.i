@@ -1,0 +1,196 @@
+/* =======================================================
+   SECTIONS — Metrics Strip, Section Layout, Grids, Vision, Pipeline
+   ======================================================= */
+
+/* Operational Scope Strip */
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  padding: 40px 0;
+}
+
+.metric-item {
+  position: relative;
+}
+
+.metric-value {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-green-accent);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.metric-label {
+  font-size: 15px;
+  color: var(--color-brown-ink);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.metric-desc {
+  font-size: 14px;
+  color: var(--color-brown-muted);
+  line-height: 1.6;
+}
+
+/* Section Layout (Full-Width Top-Header Swiss Architecture) */
+.section-block {
+  padding: 88px 0;
+}
+
+.section-header {
+  margin-bottom: 40px;
+  max-width: 900px;
+}
+
+.section-title {
+  font-size: 32px;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  color: var(--color-brown-ink);
+  font-weight: 700;
+}
+
+.section-summary {
+  font-size: 16px;
+  color: var(--color-brown-muted);
+  line-height: 1.65;
+}
+
+.section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+
+.lead-text {
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--color-brown-ink);
+  font-weight: 400;
+  max-width: 920px;
+}
+
+/* 2x2 Problem Grid (Full Width, Perfectly Balanced) */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px 48px;
+  margin-top: 4px;
+}
+
+.problem-card {
+  padding-top: 20px;
+  border-top: 2px solid var(--color-brown-line);
+}
+
+.problem-card .item-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-brown-ink);
+  margin-bottom: 10px;
+}
+
+.problem-card .item-description {
+  font-size: 15px;
+  color: var(--color-brown-body);
+  line-height: 1.75;
+}
+
+/* 3-Column Objectives Grid (Full Width) */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-top: 8px;
+}
+
+.objective-card {
+  padding-top: 20px;
+  border-top: 2px solid var(--color-brown-line);
+}
+
+.obj-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.item-index {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  color: var(--color-green-accent);
+  font-weight: 700;
+}
+
+.obj-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-brown-ink);
+}
+
+.objective-card .item-description {
+  font-size: 15px;
+  color: var(--color-brown-body);
+  line-height: 1.75;
+}
+
+/* Vision Block */
+.vision-block {
+  background-color: var(--color-base-subtle);
+  border-left: 3px solid var(--color-green-accent);
+  padding: 36px 40px;
+  margin: 8px 0;
+}
+
+.vision-quote {
+  font-size: 20px;
+  line-height: 1.75;
+  color: var(--color-brown-ink);
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Pipeline Flow Grid */
+.pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.pipeline-node {
+  padding-top: 16px;
+  border-top: 2px solid var(--color-brown-line);
+  position: relative;
+}
+
+.pipeline-node.active {
+  border-top-color: var(--color-green-accent);
+}
+
+.node-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  color: var(--color-green-accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.node-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-brown-ink);
+  margin-bottom: 6px;
+}
+
+.node-desc {
+  font-size: 13px;
+  color: var(--color-brown-muted);
+  line-height: 1.6;
+}
