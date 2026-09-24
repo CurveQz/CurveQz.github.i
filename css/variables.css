@@ -50,34 +50,34 @@
   --shadow-header: rgba(62, 40, 28, 0.04);
 }
 
-/* ---------- ธีมมืด (น้ำตาลเข้มอุ่น) ---------- */
+/* ---------- ธีมมืด (เทาเข้มกลางๆ) ---------- */
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --surface:        #1C1612;
-  --surface-subtle: #231B16;
-  --surface-warm:   #2A211B;
-  --surface-linen:  #2F251E;
+  --surface:        #161718;
+  --surface-subtle: #1C1D1F;
+  --surface-warm:   #222326;
+  --surface-linen:  #26282B;
 
-  --text-strong: #F3E9DF;
-  --text:        #D9C9BC;
-  --text-medium: #C2A898;
-  --text-muted:  #A8917F;
-  --on-strong:   #1C1612;
+  --text-strong: #EDEDED;
+  --text:        #C9CBCE;
+  --text-medium: #A9ACB0;
+  --text-muted:  #94989D;
+  --on-strong:   #161718;
 
-  --line:       #45362C;
-  --line-light: #33281F;
+  --line:       #34373B;
+  --line-light: #26282B;
 
-  --accent:        #8FC09D;
-  --accent-soft:   #6FA07E;
-  --accent-tint:   #1F2C22;
-  --accent-border: #36533F;
+  --accent:        #7FB08E;
+  --accent-soft:   #639774;
+  --accent-tint:   #1B2A20;
+  --accent-border: #2F4A37;
 
-  --risk-high: #E7937A;
-  --risk-med:  #D8B477;
+  --risk-high: #E58C74;
+  --risk-med:  #D6B06E;
 
-  --chart-baseline:     #6E5B4E;
+  --chart-baseline:     #5C6066;
   --chart-band-opacity: 0.12;
 
-  --shadow-header: rgba(0, 0, 0, 0.35);
+  --shadow-header: rgba(0, 0, 0, 0.4);
 }
