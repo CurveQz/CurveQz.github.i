@@ -124,3 +124,12 @@ header {
 :root[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
+/* ---------- เมนูของ section ที่กำลังอ่าน (ตั้งค่าใน js/main.js) ---------- */
+.nav-link.is-active {
+  color: var(--accent);
+}
+
+.nav-link.is-active::after {
+  width: 100%;
+}
+

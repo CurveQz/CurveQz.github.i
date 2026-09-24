@@ -80,3 +80,24 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ---------- เผยเนื้อหาตอนเลื่อนถึง (class ใส่โดย js/main.js) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media print {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+

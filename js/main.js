@@ -6,6 +6,8 @@
  * 2. สร้างตารางวัตถุดิบ + ปุ่มสลับเมนู + เครื่องคำนวณจำนวนจาน จาก MENUS
  * 3. สร้างตารางทีม จาก TEAM
  * 4. กราฟหน้าแรก: ชี้/แตะแล้วบอกเวลาและช่วงของวัน
+ * 5. เมนูบอกว่ากำลังอ่านส่วนไหน
+ * 6. เนื้อหาค่อยๆ เผยขึ้นตอนเลื่อนถึง
  */
 
 // กัน HTML แปลกๆ หลุดเข้าไปในหน้า ถ้ามีคนพิมพ์ < หรือ & ใน data.js
@@ -30,7 +32,8 @@ function setupSmoothScroll() {
       e.preventDefault();
       const offset = header ? header.offsetHeight : 0;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
       history.pushState(null, '', id);
     });
   });
@@ -230,9 +233,76 @@ function setupChartHover() {
   document.addEventListener('pointerdown', (e) => { if (!svg.contains(e.target)) hover.hidden = true; });
 }
 
+/* ---------- 5. เมนูบอกว่ากำลังอ่านส่วนไหน ---------- */
+function setupScrollSpy() {
+  const header = document.querySelector('header');
+  const links = [...document.querySelectorAll('.nav-link[href^="#"]')];
+  const pairs = links
+    .map((link) => [link, document.querySelector(link.getAttribute('href'))])
+    .filter(([, section]) => section);
+  if (!pairs.length) return;
+
+  let ticking = false;
+  const update = () => {
+    ticking = false;
+    const line = (header ? header.offsetHeight : 0) + 120;   // เส้นอ้างอิงใต้แถบเมนู
+    const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    let current = null;
+    for (const [link, section] of pairs) {
+      if (section.getBoundingClientRect().top <= line) current = link;
+    }
+    if (atBottom) current = pairs[pairs.length - 1][0];      // section สุดท้ายสั้น อาจไม่ถึงเส้น
+    for (const [link] of pairs) {
+      const on = link === current;
+      link.classList.toggle('is-active', on);
+      if (on) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    }
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+}
+
+/* ---------- 6. เนื้อหาค่อยๆ เผยขึ้นตอนเลื่อนถึง ----------
+   ใส่ class .reveal ด้วย JS เท่านั้น -> ถ้า JS ไม่ทำงาน เนื้อหายังแสดงครบ
+   ไม่ทำเลยถ้าผู้ใช้ตั้งเครื่องให้ลดการเคลื่อนไหว */
+const REVEAL_TARGETS = [
+  '.metric-item', '.section-header', '.lead-text', '.problem-card', '.spec-table-wrapper',
+  '.vision-block', '.objective-card', '.pipeline-node', '.bom-explorer-card',
+  '.factor-breakdown-card', '.table-responsive',
+].join(', ');
+
+function setupReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+
+  const items = [...document.querySelectorAll(REVEAL_TARGETS)];
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+
+  items.forEach((el) => {
+    // การ์ดที่อยู่ในกริดเดียวกันโผล่ไล่กันทีละนิด (สูงสุด 0.28 วินาที)
+    const siblings = [...el.parentElement.children].filter((c) => c.matches(REVEAL_TARGETS));
+    const i = siblings.indexOf(el);
+    if (siblings.length > 1) el.style.setProperty('--reveal-delay', `${Math.min(i, 4) * 70}ms`);
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setupSmoothScroll();
   setupBomExplorer();
   renderTeam();
   setupChartHover();
+  setupScrollSpy();
+  setupReveal();
 });
