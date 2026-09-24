@@ -74,12 +74,17 @@
 
   .problem-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 36px;
   }
 
   .objectives-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 36px;
+  }
+
+  .problem-card .item-label,
+  .obj-title {
+    font-size: 19px;
   }
 
   .metrics-strip {
@@ -211,9 +216,6 @@
 }
 
 @media (max-width: 880px) {
-  .objectives-grid {
-    gap: 28px;
-  }
   .item-index {
     font-size: 26px;
   }
