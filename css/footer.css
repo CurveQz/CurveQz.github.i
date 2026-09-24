@@ -3,8 +3,9 @@
    ======================================================= */
 
 footer {
-  padding: 26px 0 50px;
-  font-size: 19px;
+  padding: 26px 0 56px;
+  font-size: 14px;
+  line-height: 1.7;
   color: var(--color-brown-muted);
 }
 

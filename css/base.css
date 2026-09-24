@@ -38,7 +38,7 @@ a {
 }
 
 .container {
-  max-width: 1160px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 32px;
 }
@@ -49,4 +49,33 @@ a {
 }
 .hairline-bottom {
   border-bottom: 1px solid var(--color-brown-line);
+}
+
+/* Media never overflows its column */
+img, svg {
+  max-width: 100%;
+}
+
+/* Selection + keyboard focus */
+::selection {
+  background-color: var(--color-green-tint);
+  color: var(--color-brown-ink);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-green-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -169,9 +169,10 @@
     padding: 16px;
   }
 
-  .factor-legend-row {
-    font-size: 11px;
-    gap: 6px;
+  .factor-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    font-size: 14px;
   }
 
   .roster-table th, .roster-table td {
@@ -188,5 +189,14 @@
 
   footer {
     padding: 40px 0 60px;
+  }
+}
+
+@media (max-width: 880px) {
+  .objectives-grid {
+    gap: 28px;
+  }
+  .item-index {
+    font-size: 26px;
   }
 }
