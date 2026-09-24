@@ -27,3 +27,29 @@ footer {
   text-decoration: underline;
   color: var(--color-brown-ink);
 }
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-sub {
+  color: var(--color-brown-muted);
+}
+
+/* GitHub icon — ใช้ SVG เป็น mask เพื่อเปลี่ยนสีด้วย background-color ได้ */
+.icon-github {
+  display: inline-block;
+  width: 58px;
+  height: 58px;
+  background-color: var(--color-brown-ink);
+  -webkit-mask: url('../assets/icons/github.svg') no-repeat center / contain;
+  mask: url('../assets/icons/github.svg') no-repeat center / contain;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.github-link:hover .icon-github {
+  background-color: var(--color-green-accent);
+  transform: scale(1.1);
+}

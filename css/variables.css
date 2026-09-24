@@ -5,8 +5,7 @@
   - 60% Dominant Base: Pure White (#FFFFFF) & Archival Linen (#FAF7F2, #F5EFE8)
   - 30% Structural Typographic Ink: Timber Earth Brown (#3E281C, #563E32, #DECFC3)
   - 10% Focal Accent: Botanical Deep Sage Green (#3A694A, #5A8567, #EAF2EC)
-  Typography & Layout: Zero AI-slop, zero text distortion, rock-solid responsive
-  =======================================================
+    =======================================================
   NOTE: ไฟล์นี้ต้อง link/import เป็นไฟล์แรกสุด เพราะไฟล์อื่นเรียกใช้ตัวแปรจากตรงนี้
 */
 
@@ -30,19 +29,4 @@
   --color-green-sage: #5A8567;
   --color-green-tint: #EAF2EC;
   --color-green-border: #C2D9C9;
-}
-
-.icon-github {
-  display: inline-block;
-  width: 58px;
-  height: 58px;
-  background-color: var(--color-brown-ink);
-  -webkit-mask: url('../assets/icons/github.svg') no-repeat center / contain;
-  mask: url('../assets/icons/github.svg') no-repeat center / contain;
-  transition: background-color 0.25s ease, transform 0.25s ease;
-}
-
-.github-link:hover .icon-github {
-  background-color: var(--color-green-accent);
-  transform: scale(1.1);
 }

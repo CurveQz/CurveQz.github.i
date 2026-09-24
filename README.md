@@ -15,19 +15,41 @@
 ## โครงสร้างไฟล์
 
 ```
-index.html        โครงหน้าเว็บทั้งหมด
-script.js         smooth scroll + ตารางวัตถุดิบแบบสลับเมนู
+index.html              โครงหน้าเว็บ (ข้อความหลักของแต่ละ section)
+js/
+  data.js               ข้อมูลที่แก้บ่อย: สมาชิกทีม (TEAM) และเมนูตัวอย่าง (MENUS)
+  main.js               smooth scroll + สร้างตารางทีม/ตารางวัตถุดิบจาก data.js
 css/
-  variables.css   ตัวแปรสี (ต้องโหลดเป็นไฟล์แรก)
-  base.css        reset, typography, container
-  navbar.css      แถบนำทางด้านบน
-  hero.css        ส่วนหัวและกราฟประกอบ
-  sections.css    เลย์เอาต์ของแต่ละ section
-  tables.css      ตารางเปรียบเทียบ ตารางวัตถุดิบ ตารางทีม
-  footer.css      ส่วนท้าย
-  responsive.css  media queries (ต้องโหลดเป็นไฟล์สุดท้าย)
-assist/           โลโก้ ไอคอน และรูปสมาชิกทีม
+  variables.css         สีทั้งหมดของเว็บ (ต้องโหลดเป็นไฟล์แรก)
+  base.css              reset, ฟอนต์, container
+  navbar.css            แถบเมนูด้านบน
+  hero.css              ส่วนหัวและกราฟประกอบ
+  sections.css          เลย์เอาต์ของแต่ละ section
+  tables.css            ตารางเปรียบเทียบ ตารางวัตถุดิบ ตารางทีม
+  footer.css            ส่วนท้าย + ไอคอน GitHub
+  responsive.css        media queries (ต้องโหลดเป็นไฟล์สุดท้าย)
+assets/
+  brand/                โลโก้และ favicon
+  icons/                ไอคอน SVG
+  team/                 รูปสมาชิกทีม
 ```
+
+## อยากแก้อะไร แก้ที่ไหน
+
+| อยากแก้ | ไฟล์ |
+|---|---|
+| เพิ่ม/ลบ/แก้ข้อมูลสมาชิกทีม | `js/data.js` → `TEAM` |
+| เพิ่มเมนูหรือวัตถุดิบในตารางตัวอย่าง | `js/data.js` → `MENUS` (ปุ่มเมนูสร้างให้เอง) |
+| ข้อความในแต่ละ section | `index.html` |
+| สีของทั้งเว็บ | `css/variables.css` |
+| ขนาดตัวอักษร ระยะห่าง | ไฟล์ CSS ของ section นั้นๆ |
+| หน้าตาบนมือถือ | `css/responsive.css` |
+
+**เพิ่มสมาชิกทีม:** ใส่รูปสี่เหลี่ยมจัตุรัส (~400px, .jpg) ใน `assets/team/`
+แล้วเพิ่ม object ใหม่ใน `TEAM` ตามแบบของคนอื่น
+
+**ห้ามใส่ `style="..."` ใน HTML** — ให้สร้าง class ในไฟล์ CSS แทน
+จะได้แก้ดีไซน์ที่เดียว
 
 ## การพัฒนา
 

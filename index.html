@@ -69,11 +69,11 @@
 
         <!-- Responsive Milestone Callouts (HTML/CSS - 0% Distortion) -->
         <div class="schematic-milestones">
-          <div class="milestone-box" style="left: 38%;">
+          <div class="milestone-box milestone-lunch">
             <span class="milestone-dot dot-green"></span>
             <span class="milestone-text">พีคกลางวัน 12:30</span>
           </div>
-          <div class="milestone-box" style="left: 74%;">
+          <div class="milestone-box milestone-dinner">
             <span class="milestone-dot dot-brown"></span>
             <span class="milestone-text">พีคเย็น 19:00</span>
           </div>
@@ -117,9 +117,9 @@
 
         <div class="schematic-footer">
           <div class="schematic-legend">
-            <span><span style="color: #3A694A; font-weight: bold;">―</span> ยอดขายที่พยากรณ์</span>
-            <span><span style="color: #7A5B49; font-weight: bold;">┄</span> แนวสต็อกสำรอง</span>
-            <span><span style="color: #DECFC3; font-weight: bold;">┈</span> ยอดขายเดิม</span>
+            <span><span class="legend-mark legend-predicted" aria-hidden="true">―</span> ยอดขายที่พยากรณ์</span>
+            <span><span class="legend-mark legend-buffer" aria-hidden="true">┄</span> แนวสต็อกสำรอง</span>
+            <span><span class="legend-mark legend-baseline" aria-hidden="true">┈</span> ยอดขายเดิม</span>
           </div>
           <div class="schematic-meta-end">
             <span>ภาพนี้วาดขึ้นเพื่ออธิบายแนวคิด ยังไม่ได้ใช้ข้อมูลจริง</span>
@@ -187,9 +187,9 @@
           <table class="spec-table">
             <thead>
               <tr>
-                <th style="width: 22%;">มิติการทำงาน</th>
-                <th style="width: 38%;">วิธีที่ร้านทำกันอยู่</th>
-                <th style="width: 40%;">แนวทางที่ CurveQz เสนอ</th>
+                <th class="col-dimension">มิติการทำงาน</th>
+                <th class="col-current">วิธีที่ร้านทำกันอยู่</th>
+                <th class="col-proposed">แนวทางที่ CurveQz เสนอ</th>
               </tr>
             </thead>
             <tbody>
@@ -335,10 +335,10 @@
           <div class="factor-breakdown-card">
             <h4 class="factor-title">ปัจจัยที่เราวางแผนจะนำมาทดสอบ</h4>
             <ul class="factor-list">
-              <li><span class="factor-swatch" style="background: #3A694A;"></span>ยอดขายย้อนหลังของแต่ละสาขา</li>
-              <li><span class="factor-swatch" style="background: #5A8567;"></span>สภาพอากาศรายวัน</li>
-              <li><span class="factor-swatch" style="background: #7A5B49;"></span>วันหยุดและปฏิทินอีเวนต์</li>
-              <li><span class="factor-swatch" style="background: #917564;"></span>โปรโมชันของร้าน</li>
+              <li><span class="factor-swatch swatch-history"></span>ยอดขายย้อนหลังของแต่ละสาขา</li>
+              <li><span class="factor-swatch swatch-weather"></span>สภาพอากาศรายวัน</li>
+              <li><span class="factor-swatch swatch-calendar"></span>วันหยุดและปฏิทินอีเวนต์</li>
+              <li><span class="factor-swatch swatch-promo"></span>โปรโมชันของร้าน</li>
             </ul>
             <p class="factor-note">ตอนนี้ยังตอบไม่ได้ว่าปัจจัยไหนมีน้ำหนักมากกว่ากัน ต้องรอผลจากการเทรนและทดสอบโมเดลด้วยข้อมูลจริงก่อน</p>
           </div>
@@ -358,9 +358,9 @@
           <table class="roster-table">
             <thead>
               <tr>
-                <th style="width: 72px;">สมาชิก</th>
-                <th style="width: 170px;">ตำแหน่ง (Role)</th>
-                <th style="width: 220px;">ชื่อ–นามสกุล / รหัสนักศึกษา</th>
+                <th class="col-photo">สมาชิก</th>
+                <th class="col-role">ตำแหน่ง (Role)</th>
+                <th class="col-name">ชื่อ–นามสกุล / รหัสนักศึกษา</th>
                 <th>ขอบเขตความรับผิดชอบ</th>
               </tr>
             </thead>
@@ -378,14 +378,14 @@
   <footer>
     <div class="container">
       <div class="footer-flex">
-        <div style="display: flex; align-items: center; gap: 16px;">
+        <div class="footer-brand">
           <img src="assets/brand/logo.png" alt="CurveQz Logo" class="footer-logo" />
           <div>
             <strong>CurveQz</strong> — Applied IT & AI Research<br />
-            <span style="color: var(--color-brown-muted);">สถาบันการจัดการปัญญาภิวัฒน์ (Panyapiwat Institute of Management)</span>
+            <span class="footer-sub">สถาบันการจัดการปัญญาภิวัฒน์ (Panyapiwat Institute of Management)</span>
           </div>
         </div>
-        <div style="font-size: 13px;">
+        <div class="footer-social">
           <a href="https://github.com/CurveQz" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub">
             <span class="icon-github"></span>
           </a>

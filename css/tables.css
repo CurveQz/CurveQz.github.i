@@ -62,6 +62,11 @@
   border-bottom: none;
 }
 
+/* ความกว้างคอลัมน์ตารางเปรียบเทียบ */
+.spec-table .col-dimension { width: 22%; }
+.spec-table .col-current   { width: 38%; }
+.spec-table .col-proposed  { width: 40%; }
+
 .spec-dim {
   font-weight: 600;
   color: var(--color-brown-ink);
@@ -243,6 +248,11 @@
   border-radius: 2px;
 }
 
+.swatch-history  { background-color: var(--color-green-accent); }
+.swatch-weather  { background-color: var(--color-green-sage); }
+.swatch-calendar { background-color: var(--color-brown-medium); }
+.swatch-promo    { background-color: var(--color-brown-muted); }
+
 .factor-note {
   margin-top: 20px;
   padding-top: 16px;
@@ -278,6 +288,11 @@
   border-bottom: 1px solid var(--color-brown-line);
   vertical-align: middle;
 }
+
+/* ความกว้างคอลัมน์ตารางทีม (คอลัมน์สุดท้ายกินที่ที่เหลือ) */
+.roster-table .col-photo { width: 72px; }
+.roster-table .col-role  { width: 170px; }
+.roster-table .col-name  { width: 220px; }
 
 .roster-avatar-cell {
   width: 72px;

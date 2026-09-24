@@ -123,12 +123,17 @@
 }
 
 .dot-green {
-  background-color: #3A694A;
+  background-color: var(--color-green-accent);
 }
 
 .dot-brown {
-  background-color: #7A5B49;
+  background-color: var(--color-brown-medium);
 }
+
+/* ตำแหน่งป้าย peak ต้องตรงกับแกน x ของจุดในกราฟ SVG (viewBox กว้าง 1000)
+   จุด lunch อยู่ที่ x=380 -> 38%, จุด dinner อยู่ที่ x=740 -> 74% */
+.milestone-lunch  { left: 38%; }
+.milestone-dinner { left: 74%; }
 
 .schematic-canvas {
   padding: 8px 24px 8px;
@@ -173,3 +178,11 @@
   font-weight: 400;
   font-style: italic;
 }
+
+/* สัญลักษณ์เส้นในคำอธิบายกราฟ — สีต้องตรงกับ stroke ใน SVG */
+.legend-mark {
+  font-weight: 700;
+}
+.legend-predicted { color: var(--color-green-accent); }
+.legend-buffer    { color: var(--color-brown-medium); }
+.legend-baseline  { color: var(--color-brown-line); }
