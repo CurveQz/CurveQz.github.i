@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CurveQz — AI-Powered Inventory & Demand Forecasting</title>
+  <title>CurveQz — ระบบช่วยวางแผนสั่งวัตถุดิบสำหรับร้านอาหาร</title>
+  <meta name="description" content="โครงงานนักศึกษา PIM ที่ใช้ Machine Learning ช่วยร้านอาหารวางแผนสั่งวัตถุดิบให้ใกล้เคียงกับยอดขายจริง เพื่อลดของที่ต้องทิ้งและลดเวลาคำนวณ" />
+  <link rel="icon" href="assist/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://curveqz.github.io/CurveQz.github.i/" />
+  <meta property="og:title" content="CurveQz — ระบบช่วยวางแผนสั่งวัตถุดิบสำหรับร้านอาหาร" />
+  <meta property="og:description" content="โครงงานนักศึกษา PIM ที่ใช้ Machine Learning ช่วยร้านอาหารวางแผนสั่งวัตถุดิบให้ใกล้เคียงกับยอดขายจริง" />
+  <meta property="og:image" content="https://curveqz.github.io/CurveQz.github.i/assist/logo.png" />
+  <meta name="twitter:card" content="summary" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -42,20 +50,20 @@
   <section class="hero hairline-bottom">
     <div class="container">
       <div class="hero-header-block">
-        <span class="hero-kicker">Machine Learning & Decision Support</span>
+        <span class="hero-kicker">โครงงานนักศึกษา · สถาบันการจัดการปัญญาภิวัฒน์</span>
         <h1 class="hero-title">CurveQz</h1>
-        <p class="hero-subtitle">แนวคิดของพวกเราคือการทำให้ร้านอาหารสามารถบริหารจัดการทรัพยากรสำหรับการประกอบธุรกิจให้มีประสิทธิภาพลดต้นทุนเพิ่มรายได้ให้เเก่ธุรกิจ</p>
+        <p class="hero-subtitle">เราอยากช่วยให้ร้านอาหารสั่งวัตถุดิบได้ใกล้เคียงกับที่ขายจริง ลดของที่ต้องทิ้ง และลดเวลาที่ผู้จัดการต้องนั่งคำนวณเอง</p>
       </div>
 
       <!-- Architectural Hero Visual: Demand Curve & Stock Optimization Flow -->
       <div class="hero-schematic-frame" aria-hidden="true">
         <div class="schematic-header">
           <div class="schematic-meta-left">
-            <span class="schematic-tag">CURVEQZ ENGINE // MULTI-FACTOR FLOW</span>
-            <span class="schematic-sub">การจำแนกเส้นความต้องการและสินค้าคงคลังเผื่อฉุกเฉิน (Demand & Safety Stock Variance)</span>
+            <span class="schematic-tag">รูปแบบความต้องการในหนึ่งวัน</span>
+            <span class="schematic-sub">เส้นที่พยากรณ์ เส้นสต็อกสำรอง และยอดขายเดิม</span>
           </div>
           <div class="schematic-meta-right">
-            <span class="schematic-badge"><span class="badge-dot"></span> REAL-TIME POS HARMONIZATION</span>
+            <span class="schematic-badge"><span class="badge-dot"></span> ภาพประกอบแนวคิด</span>
           </div>
         </div>
 
@@ -63,11 +71,11 @@
         <div class="schematic-milestones">
           <div class="milestone-box" style="left: 38%;">
             <span class="milestone-dot dot-green"></span>
-            <span class="milestone-text">LUNCH PEAK (12:30)</span>
+            <span class="milestone-text">พีคกลางวัน 12:30</span>
           </div>
           <div class="milestone-box" style="left: 74%;">
             <span class="milestone-dot dot-brown"></span>
-            <span class="milestone-text">DINNER PEAK (19:00)</span>
+            <span class="milestone-text">พีคเย็น 19:00</span>
           </div>
         </div>
 
@@ -101,38 +109,38 @@
 
         <!-- Timeline Axis (HTML/CSS - Crisp, never squished!) -->
         <div class="schematic-timeline">
-          <span>06:00 PREP</span>
-          <span>12:00 SERVICE</span>
-          <span>18:30 EVENING</span>
-          <span>22:00 AUDIT</span>
+          <span>06:00 เตรียมของ</span>
+          <span>12:00 ช่วงขาย</span>
+          <span>18:30 ช่วงเย็น</span>
+          <span>22:00 ปิดร้าน</span>
         </div>
 
         <div class="schematic-footer">
           <div class="schematic-legend">
-            <span><span style="color: #3A694A; font-weight: bold;">―</span> เส้นความต้องการที่พยากรณ์ (Predicted Demand)</span>
-            <span><span style="color: #7A5B49; font-weight: bold;">┄</span> แนวรับสต็อกปลอดภัย (Safety Buffer Boundary)</span>
-            <span><span style="color: #DECFC3; font-weight: bold;">┈</span> ฐานยอดขายเดิม (Baseline Consumption)</span>
+            <span><span style="color: #3A694A; font-weight: bold;">―</span> ยอดขายที่พยากรณ์</span>
+            <span><span style="color: #7A5B49; font-weight: bold;">┄</span> แนวสต็อกสำรอง</span>
+            <span><span style="color: #DECFC3; font-weight: bold;">┈</span> ยอดขายเดิม</span>
           </div>
           <div class="schematic-meta-end">
-            <span>DATA HARMONIZED ACROSS 54+ INVENTORY PARAMETERS</span>
+            <span>ภาพนี้วาดขึ้นเพื่ออธิบายแนวคิด ยังไม่ได้ใช้ข้อมูลจริง</span>
           </div>
         </div>
       </div>
       <!-- Operational Scope & Capabilities -->
       <div class="metrics-strip hairline-top">
         <div class="metric-item">
-          <div class="metric-value">Daily Sync</div>
+          <div class="metric-value">รับข้อมูลรายวัน</div>
           <div class="metric-label">ความถี่การประมวลผล</div>
           <div class="metric-desc">วางแผนรับข้อมูลยอดขายและสต็อกจาก POS ในแต่ละวัน โดยตรวจสอบข้อมูลและสิทธิ์ที่แต่ละระบบรองรับก่อน</div>
         </div>
         <div class="metric-item">
-          <div class="metric-value">Recipe BOM</div>
+          <div class="metric-value">คำนวณจากสูตรอาหาร</div>
           <div class="metric-label">ขอบเขตการคำนวณ</div>
           <div class="metric-desc">นำยอดขายที่คาดการณ์มาคำนวณปริมาณวัตถุดิบ ตามสูตรอาหารที่ร้านบันทึกไว้</div>
         </div>
         <div class="metric-item">
-          <div class="metric-value">Decision Support</div>
-          <div class="metric-label">เน้นการสนับสนุนการตัดสินใจ</div>
+          <div class="metric-value">คนตัดสินใจขั้นสุดท้าย</div>
+          <div class="metric-label">บทบาทของระบบ</div>
           <div class="metric-desc">ผู้จัดการตรวจของจริง ปรับรายการ และเป็นผู้ตัดสินใจก่อนสั่งซื้อ</div>
         </div>
       </div>
@@ -153,22 +161,22 @@
         <!-- 2x2 Problem Grid (Full Width, Perfectly Balanced) -->
         <div class="problem-grid">
           <div class="problem-card">
-            <div class="item-label">Overstocking & Waste</div>
+            <div class="item-label">สั่งมากเกิน แล้วต้องทิ้ง</div>
             <div class="item-description">ประสบการณ์ช่วยให้ผู้จัดการประเมินยอดขายได้ แต่เมื่อความต้องการเปลี่ยนไป การใช้ความคุ้นเคยเพียงอย่างเดียวอาจไม่พอ หากสำรองของมากเกินจำเป็น วัตถุดิบบางส่วนอาจเสื่อมคุณภาพก่อนนำไปใช้ กลายเป็นต้นทุนที่ร้านต้องรับภาระ</div>
           </div>
 
           <div class="problem-card">
-            <div class="item-label">Understocking & Lost Sales</div>
+            <div class="item-label">สั่งน้อยเกิน แล้วขายไม่ทัน</div>
             <div class="item-description">วันหยุด โปรโมชัน หรือกิจกรรมใกล้ร้านอาจทำให้ยอดขายสูงกว่าคาด ส่วนสภาพอากาศอาจส่งผลต่างกันในแต่ละสาขา หากเตรียมของไม่ทัน ร้านอาจต้องหยุดขายบางเมนูและเสียโอกาสสร้างรายได้</div>
           </div>
 
           <div class="problem-card">
-            <div class="item-label">Recipe-to-Ingredient Gap</div>
+            <div class="item-label">แปลงจำนวนจานเป็นวัตถุดิบ</div>
             <div class="item-description">แม้ร้านจะรู้ว่าขายแต่ละเมนูได้กี่จาน แต่ยังต้องคำนวณต่อว่าควรเตรียมเนื้อสัตว์ ผัก และเครื่องปรุงเท่าไร โดยเฉพาะวัตถุดิบที่ใช้ร่วมกันหลายเมนู งานส่วนนี้จึงใช้เวลาและมีโอกาสผิดพลาด</div>
           </div>
 
           <div class="problem-card">
-            <div class="item-label">Limited HQ Visibility</div>
+            <div class="item-label">ส่วนกลางมองไม่เห็นภาพรวม</div>
             <div class="item-description">หากแต่ละสาขาสั่งซื้อและบันทึกข้อมูลแยกกัน ส่วนกลางอาจรวบรวมข้อมูลได้ไม่ทัน ทำให้มองเห็นได้ยากว่าสาขาใดมีของเหลือทิ้งมาก หรือควรปรับแผนการสั่งซื้ออย่างไร</div>
           </div>
         </div>
@@ -180,8 +188,8 @@
             <thead>
               <tr>
                 <th style="width: 22%;">มิติการทำงาน</th>
-                <th style="width: 38%;">การสั่งซื้อแบบดั้งเดิม (Manual Guesswork)</th>
-                <th style="width: 40%;">แนวทางของ CurveQz (Data-Informed Model)</th>
+                <th style="width: 38%;">วิธีที่ร้านทำกันอยู่</th>
+                <th style="width: 40%;">แนวทางที่ CurveQz เสนอ</th>
               </tr>
             </thead>
             <tbody>
@@ -198,12 +206,12 @@
               <tr>
                 <td class="spec-dim">การควบคุมของเสีย</td>
                 <td>มักทราบยอดสูญเสียหลังของหมดอายุและต้องทิ้งแล้ว</td>
-                <td>ประเมินอัตราหมุนเวียนล่วงหน้าตามอายุเก็บรักษา (Shelf-Life)</td>
+                <td>ประเมินอัตราหมุนเวียนล่วงหน้าจากอายุเก็บรักษาของวัตถุดิบ</td>
               </tr>
               <tr>
                 <td class="spec-dim">บทบาทผู้จัดการ</td>
                 <td>เสียเวลาหน้างานไปกับการคำนวณตัวเลขและกรอกใบสั่งของ</td>
-                <td>เป็นผู้อนุมัติขั้นสุดท้าย (Human-in-the-Loop) โดยมีระบบช่วยเตรียมข้อมูล</td>
+                <td>เป็นผู้อนุมัติขั้นสุดท้าย โดยมีระบบช่วยเตรียมข้อมูลให้</td>
               </tr>
             </tbody>
           </table>
@@ -229,7 +237,7 @@
         <div class="objectives-grid">
           <div class="objective-card">
             <div class="obj-header">
-              <span class="item-index">[ 01 ]</span>
+              <span class="item-index">01</span>
               <span class="obj-title">ควบคุมต้นทุนวัตถุดิบ</span>
             </div>
             <div class="item-description">เราจะติดตามปริมาณและมูลค่าวัตถุดิบที่ทิ้ง เทียบกับช่วงก่อนทดลองใช้ พร้อมดูเหตุการณ์ของขาด เพื่อให้การลดของเสียไม่กระทบต่อความพร้อมในการขาย</div>
@@ -237,7 +245,7 @@
 
           <div class="objective-card">
             <div class="obj-header">
-              <span class="item-index">[ 02 ]</span>
+              <span class="item-index">02</span>
               <span class="obj-title">วางแผนใช้ของสดให้ทันเวลา</span>
             </div>
             <div class="item-description">วางแผนใช้วัตถุดิบให้สอดคล้องกับอายุการเก็บรักษาและความต้องการ เพื่อลดของค้างสต็อก โดยยังต้องอาศัยการตรวจคุณภาพจากพนักงานหน้างาน</div>
@@ -245,7 +253,7 @@
 
           <div class="objective-card">
             <div class="obj-header">
-              <span class="item-index">[ 03 ]</span>
+              <span class="item-index">03</span>
               <span class="obj-title">ลดเวลาเตรียมรายการสั่งซื้อ</span>
             </div>
             <div class="item-description">ให้ระบบเตรียมรายการสั่งซื้อเบื้องต้น แล้วผู้จัดการตรวจสอบและปรับแก้ เราจะวัดเวลาที่ใช้ก่อนและหลังทดลอง แทนการรับรองล่วงหน้าว่าจะลดเวลาได้เท่าไร</div>
@@ -268,25 +276,25 @@
           <!-- System Flow Grid -->
           <div class="pipeline-grid">
             <div class="pipeline-node active">
-              <div class="node-num">01 / DATA INGESTION</div>
+              <div class="node-num">01</div>
               <div class="node-title">รับข้อมูลยอดขาย</div>
               <div class="node-desc">เริ่มจากไฟล์ยอดขาย แล้วจึงพัฒนาการรับข้อมูลจาก POS ที่รองรับการเชื่อมต่อ</div>
             </div>
 
             <div class="pipeline-node active">
-              <div class="node-num">02 / MULTI-FACTOR ML</div>
+              <div class="node-num">02</div>
               <div class="node-title">พยากรณ์ความต้องการ</div>
               <div class="node-desc">ทดสอบยอดขายย้อนหลังร่วมกับวันหยุด โปรโมชัน อากาศ และกิจกรรมใกล้ร้าน</div>
             </div>
 
             <div class="pipeline-node active">
-              <div class="node-num">03 / RECIPE BOM</div>
+              <div class="node-num">03</div>
               <div class="node-title">คำนวณวัตถุดิบ</div>
               <div class="node-desc">คำนวณวัตถุดิบจากยอดขายที่คาดไว้ โดยใช้สูตรและปริมาณต่อจานที่ร้านบันทึก</div>
             </div>
 
             <div class="pipeline-node active">
-              <div class="node-num">04 / ORDER REVIEW</div>
+              <div class="node-num">04</div>
               <div class="node-title">ตรวจสอบและอนุมัติ</div>
               <div class="node-desc">หักสต็อกที่ยังใช้ได้และเผื่อของสำรอง ให้ผู้จัดการตรวจและปรับก่อนยืนยัน</div>
             </div>
@@ -296,8 +304,8 @@
           <div class="bom-explorer-card">
             <div class="bom-header">
               <div>
-                <span class="sim-tag">RECIPE BILL OF MATERIALS (BOM)</span>
-                <h4 style="font-size: 18px; margin-top: 4px; color: var(--color-brown-ink);">โครงสร้างการแยกส่วนวัตถุดิบสดต่อเมนู</h4>
+                <h4 class="bom-title">วัตถุดิบที่ใช้ต่อหนึ่งจาน</h4>
+                <span class="sim-tag">ตัวอย่างสูตรที่เราใช้ทดสอบการคำนวณ</span>
               </div>
               <!-- Tab Switcher -->
               <div class="bom-tabs">
@@ -325,28 +333,16 @@
             </div>
           </div>
 
-          <!-- Fine Linework Factor Weight Breakdown -->
+          <!-- ปัจจัยที่วางแผนจะนำมาทดสอบ -->
           <div class="factor-breakdown-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-              <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-brown-muted);">ตัวอย่างสัดส่วนปัจจัยในการพยากรณ์ (Illustrative Weight Model)</span>
-              <span class="factor-version">SYS.WEIGHT // V1.2</span>
-            </div>
-            <svg width="100%" height="32" viewBox="0 0 700 32" fill="none">
-              <!-- Historical Trend (Earth Green Accent) -->
-              <rect x="0" y="10" width="280" height="12" fill="#3A694A" />
-              <!-- Weather & Environment (Sage Green) -->
-              <rect x="284" y="10" width="160" height="12" fill="#5A8567" />
-              <!-- Events & Calendar (Earth Brown) -->
-              <rect x="448" y="10" width="140" height="12" fill="#7A5B49" />
-              <!-- Marketing Promotions (Warm Sand) -->
-              <rect x="592" y="10" width="108" height="12" fill="#DECFC3" />
-            </svg>
-            <div class="factor-legend-row">
-              <span><span style="color: #3A694A;">■</span> ยอดขายย้อนหลัง (40%)</span>
-              <span><span style="color: #5A8567;">■</span> สภาพอากาศ (23%)</span>
-              <span><span style="color: #7A5B49;">■</span> ปฏิทิน/อีเวนต์ (20%)</span>
-              <span><span style="color: #917564;">■</span> โปรโมชัน (17%)</span>
-            </div>
+            <h4 class="factor-title">ปัจจัยที่เราวางแผนจะนำมาทดสอบ</h4>
+            <ul class="factor-list">
+              <li><span class="factor-swatch" style="background: #3A694A;"></span>ยอดขายย้อนหลังของแต่ละสาขา</li>
+              <li><span class="factor-swatch" style="background: #5A8567;"></span>สภาพอากาศรายวัน</li>
+              <li><span class="factor-swatch" style="background: #7A5B49;"></span>วันหยุดและปฏิทินอีเวนต์</li>
+              <li><span class="factor-swatch" style="background: #917564;"></span>โปรโมชันของร้าน</li>
+            </ul>
+            <p class="factor-note">ตอนนี้ยังตอบไม่ได้ว่าปัจจัยไหนมีน้ำหนักมากกว่ากัน ต้องรอผลจากการเทรนและทดสอบโมเดลด้วยข้อมูลจริงก่อน</p>
           </div>
         </div>
       </div>
@@ -372,7 +368,7 @@
             </thead>
             <tbody>
               <tr>
-                <td class="roster-avatar-cell"><img src="assist/soda.png" alt="นายศนุชา สอนเดช" class="roster-avatar" /></td>
+                <td class="roster-avatar-cell"><img src="assist/soda.jpg" alt="นายศนุชา สอนเดช" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
                 <td><span class="role-badge">CEO & DATA</span></td>
                 <td>
                   <strong>นายศนุชา สอนเดช</strong><br />
@@ -388,7 +384,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="roster-avatar-cell"><img src="assist/nut.png" alt="นายนัธทวัฒน์ อุ้มญาติ" class="roster-avatar" /></td>
+                <td class="roster-avatar-cell"><img src="assist/nut.jpg" alt="นายนัธทวัฒน์ อุ้มญาติ" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
                 <td><span class="role-badge">CTO</span></td>
                 <td>
                   <strong>นายนัธทวัฒน์ อุ้มญาติ</strong><br />
@@ -404,7 +400,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="roster-avatar-cell"><img src="assist/tonkla.png" alt="นายอาณัติ หลีเกี๊ยะ" class="roster-avatar" /></td>
+                <td class="roster-avatar-cell"><img src="assist/tonkla.jpg" alt="นายอาณัติ หลีเกี๊ยะ" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
                 <td><span class="role-badge">DEVOPS</span></td>
                 <td>
                   <strong>นายอาณัติ หลีเกี๊ยะ</strong><br />
@@ -420,7 +416,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="roster-avatar-cell"><img src="assist/ter.png" alt="นายกษิดิ์เดช คู่คิด" class="roster-avatar" /></td>
+                <td class="roster-avatar-cell"><img src="assist/ter.jpg" alt="นายกษิดิ์เดช คู่คิด" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
                 <td><span class="role-badge">SECURITY & IT OPS</span></td>
                 <td>
                   <strong>นายกษิดิ์เดช คู่คิด</strong><br />
@@ -436,7 +432,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="roster-avatar-cell"><img src="assist/kong.png" alt="นายก้องภพ สุขทรัพย์" class="roster-avatar" /></td>
+                <td class="roster-avatar-cell"><img src="assist/kong.jpg" alt="นายก้องภพ สุขทรัพย์" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
                 <td><span class="role-badge">QA</span></td>
                 <td>
                   <strong>นายก้องภพ สุขทรัพย์</strong><br />
@@ -452,7 +448,7 @@
                 </td>
               </tr>
               <tr>
-                <td class="roster-avatar-cell"><img src="assist/phai.png" alt="นางสาวธนัชพร ช่วยนาค" class="roster-avatar" /></td>
+                <td class="roster-avatar-cell"><img src="assist/phai.jpg" alt="นางสาวธนัชพร ช่วยนาค" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
                 <td><span class="role-badge">UX/UI & MARKET</span></td>
                 <td>
                   <strong>นางสาวธนัชพร ช่วยนาค</strong><br />
