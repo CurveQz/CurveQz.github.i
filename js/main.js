@@ -8,6 +8,7 @@
  * 4. กราฟหน้าแรก: ชี้/แตะแล้วบอกเวลาและช่วงของวัน
  * 5. เมนูบอกว่ากำลังอ่านส่วนไหน
  * 6. เนื้อหาค่อยๆ เผยขึ้นตอนเลื่อนถึง
+ * 7. เตรียมตารางให้กลายเป็นการ์ดบนมือถือ
  */
 
 // กัน HTML แปลกๆ หลุดเข้าไปในหน้า ถ้ามีคนพิมพ์ < หรือ & ใน data.js
@@ -298,11 +299,34 @@ function setupReveal() {
   });
 }
 
+/* ---------- 7. ตารางกลายเป็นการ์ดบนมือถือ ----------
+   CSS ใน responsive.css เปลี่ยน layout ส่วน JS แค่เตรียมของให้:
+   - data-label: ชื่อคอลัมน์ ไว้แสดงเป็นป้ายเล็กในการ์ด
+   - role: ตอนใช้ display:block บางเบราว์เซอร์จะลืมว่าเป็นตาราง
+           ใส่ role ไว้ screen reader จะยังอ่านเป็นตารางได้ */
+function prepareStackTables() {
+  document.querySelectorAll('.stack-table').forEach((table) => {
+    const heads = [...table.querySelectorAll('thead th')].map((th) => th.textContent.trim());
+    table.setAttribute('role', 'table');
+    table.querySelectorAll('thead, tbody').forEach((g) => g.setAttribute('role', 'rowgroup'));
+    table.querySelectorAll('tr').forEach((tr) => tr.setAttribute('role', 'row'));
+    table.querySelectorAll('th').forEach((th) => th.setAttribute('role', 'columnheader'));
+    table.querySelectorAll('tbody tr').forEach((tr) => {
+      [...tr.children].forEach((td, i) => {
+        td.setAttribute('role', 'cell');
+        if (heads[i]) td.dataset.label = heads[i];
+      });
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('bom:rendered', prepareStackTables);   // ตารางวัตถุดิบถูกสร้างใหม่ทุกครั้งที่เปลี่ยนเมนู/จำนวนจาน
   setupSmoothScroll();
   setupBomExplorer();
   renderTeam();
   setupChartHover();
   setupScrollSpy();
   setupReveal();
+  prepareStackTables();
 });

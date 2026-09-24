@@ -236,3 +236,145 @@
     font-size: 26px;
   }
 }
+
+/* =======================================================
+   มือถือ: ตาราง -> การ์ด (ไม่ต้องเลื่อนซ้ายขวาอ่าน)
+   ใช้กับตารางที่มี class .stack-table
+   ชื่อคอลัมน์มาจาก data-label ที่ js/main.js ใส่ให้
+   ======================================================= */
+@media (max-width: 640px) {
+  .stack-table {
+    min-width: 0;
+  }
+
+  /* ซ่อนหัวตารางจากตา แต่ screen reader ยังอ่านได้ */
+  .stack-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .stack-table,
+  .stack-table tbody,
+  .stack-table tr,
+  .stack-table td {
+    display: block;
+  }
+
+  .stack-table td {
+    padding: 0;
+    border: 0;
+  }
+
+  .stack-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  /* ---- ตารางเทียบวิธีเดิม / CurveQz ---- */
+  .spec-table-wrapper {
+    overflow: visible;
+  }
+
+  .spec-table tr {
+    display: grid;
+    gap: 12px;
+    padding: 16px;
+    border-bottom: 1px solid var(--line-light);
+  }
+
+  .spec-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .spec-table .spec-dim {
+    font-size: 16px;
+  }
+
+  .stack-table td.spec-dim[data-label]::before {
+    content: none;   /* หัวข้อของการ์ดอยู่แล้ว ไม่ต้องมีป้าย */
+  }
+
+  /* แนวทางของเรา = คำตอบของการ์ด -> ขีดเขียวนำสายตา */
+  .spec-table td:last-child {
+    padding-left: 12px;
+    border-left: 2px solid var(--accent);
+  }
+
+  /* ---- ตารางวัตถุดิบ ---- */
+  .bom-table-container {
+    overflow: visible;
+  }
+
+  .bom-table tr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 16px;
+    padding: 16px;
+    border-bottom: 1px solid var(--line-light);
+  }
+
+  .bom-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .bom-table .bom-name,
+  .bom-table .bom-rule {
+    grid-column: 1 / -1;
+  }
+
+  .bom-table .bom-name {
+    font-size: 17px;
+  }
+
+  .stack-table td.bom-name[data-label]::before {
+    content: none;
+  }
+
+  /* ---- ตารางทีม ---- */
+  .table-responsive {
+    overflow: visible;
+    border: 0;
+    background: transparent;
+  }
+
+  .roster-table tbody tr {
+    display: grid;
+    grid-template-columns: 54px 1fr;
+    column-gap: 14px;
+    row-gap: 6px;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background-color: var(--surface);
+  }
+
+  .roster-table.stack-table td[data-label]::before {
+    content: none;   /* การ์ดทีมเข้าใจได้เองโดยไม่ต้องมีป้าย */
+  }
+
+  .roster-table .roster-avatar-cell {
+    grid-row: 1 / span 2;
+    width: auto;
+  }
+
+  .roster-table td:nth-child(2),
+  .roster-table td:nth-child(3) {
+    grid-column: 2;
+  }
+
+  .roster-table td:nth-child(4) {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+  }
+}
+
