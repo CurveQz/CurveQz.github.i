@@ -60,41 +60,46 @@
   --shadow-header: rgba(62, 40, 28, 0.04);
 }
 
-/* ---------- ธีมมืด (เทาเข้มกลางๆ) ---------- */
+/* ---------- ธีมมืด (ตามหลัก Material Design 3) ----------
+   ค่าสีคำนวณจาก tonal palette ของ Material 3 (เลข T = tone 0 ดำ – 100 ขาว)
+   - พื้นหลังใช้เทาไม่ใช่ดำสนิท และกล่องที่ซ้อนขึ้นมาจะสว่างขึ้นทีละขั้น
+   - ตัวอักษรมี 2 ระดับหลัก: onSurface (T90) และ onSurfaceVariant (T80)
+     หัวข้อกับเนื้อหาใช้สีเดียวกัน แยกกันด้วยขนาดและความหนา
+   - สีเน้นใช้ tone 80 ของสีเขียวแบรนด์ (ธีมสว่างใช้ tone 40 = #3A694A) */
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --surface:        #161718;
-  --surface-subtle: #1C1D1F;
-  --surface-warm:   #222326;
-  --surface-linen:  #26282B;
+  --surface:        #131313;   /* surface               N6  */
+  --surface-subtle: #1B1B1B;   /* surfaceContainerLow   N10 */
+  --surface-warm:   #1F1F1F;   /* surfaceContainer      N12 */
+  --surface-linen:  #2A2A2A;   /* surfaceContainerHigh  N17 */
 
-  --text-strong: #EDEDED;
-  --text:        #C9CBCE;
-  --text-medium: #A9ACB0;
-  --text-muted:  #94989D;
+  --text-strong: #E2E2E2;      /* onSurface             N90 */
+  --text:        #E2E2E2;      /* onSurface             N90 */
+  --text-medium: #C6C6C6;      /* onSurfaceVariant      N80 */
+  --text-muted:  #C6C6C6;      /* onSurfaceVariant      N80 */
 
-  --line:       #34373B;
-  --line-light: #26282B;
+  --line:       #474747;       /* outlineVariant        N30 */
+  --line-light: #353535;       /* surfaceContainerHighest N22 */
 
-  --accent:        #7FB08E;
-  --accent-soft:   #639774;
-  --accent-tint:   #1B2A20;
-  --accent-border: #2F4A37;
+  --accent:        #95D5A7;    /* primary               P80 */
+  --accent-soft:   #7AB98D;    /*                       P70 */
+  --accent-tint:   #00391D;    /*                       P20 */
+  --accent-border: #10512F;    /* primaryContainer      P30 */
 
-  --risk-high: #E58C74;
-  --risk-med:  #D6B06E;
+  --risk-high: #FFB5A0;        /* tone 80 ของสีส้มแดง (แบบเดียวกับ error ของ M3) */
+  --risk-med:  #F8BC63;        /* tone 80 ของสีเหลืองอำพัน */
 
-  --data-warm: #C4A27E;        /* สีแทนอุ่น เก็บร่องรอยสีน้ำตาลของแบรนด์ไว้ในข้อมูล */
+  --data-warm: #C4A27E;
 
-  --tab-active-bg:     #1B2A20; /* เขียวเข้ม แทนกล่องขาวที่จ้าเกินไป */
-  --tab-active-text:   #7FB08E;
-  --tab-active-border: #2F4A37;
+  --tab-active-bg:     #10512F; /* primaryContainer   P30 */
+  --tab-active-text:   #B0F1C2; /* onPrimaryContainer P90 */
+  --tab-active-border: #10512F;
 
-  --chart-baseline:     #5C6066;
+  --chart-baseline:     #5E5E5E; /* N40 */
   --chart-band-opacity: 0.12;
 
-  --photo-brightness: 0.9;      /* รูปพื้นขาวไม่แสบตาบนพื้นมืด */
+  --photo-brightness: 0.9;
 
   --shadow-header: rgba(0, 0, 0, 0.4);
 }
