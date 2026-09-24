@@ -29,6 +29,18 @@
     width: 100%;
   }
 
+  /* ปุ่มธีมย้ายไปมุมขวาบนข้างโลโก้ ไม่ให้ตกบรรทัดใหม่ */
+  .navbar {
+    position: relative;
+  }
+
+  .theme-toggle {
+    position: absolute;
+    top: 11px;
+    right: 0;
+    margin-left: 0;
+  }
+
   .nav-link {
     font-size: 13.5px;
     padding: 4px 0;

@@ -14,7 +14,7 @@
 .hero-kicker {
   font-size: 13px;
   letter-spacing: 0;
-  color: var(--color-green-accent);
+  color: var(--accent);
   font-weight: 600;
   margin-bottom: 18px;
   display: inline-block;
@@ -33,7 +33,7 @@
 .hero-subtitle {
   font-size: 18px;
   line-height: 1.75;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
   max-width: 780px;
   font-weight: 400;
   letter-spacing: 0;
@@ -44,15 +44,15 @@
    ======================================================= */
 .hero-schematic-frame {
   margin: 36px 0 48px;
-  border: 1px solid var(--color-brown-line);
-  background-color: var(--color-base-white);
+  border: 1px solid var(--line);
+  background-color: var(--surface);
   overflow: hidden;
 }
 
 .schematic-header {
   padding: 16px 24px;
-  background-color: var(--color-brown-surface);
-  border-bottom: 1px solid var(--color-brown-line);
+  background-color: var(--surface-warm);
+  border-bottom: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,13 +65,13 @@
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0;
-  color: var(--color-brown-ink);
+  color: var(--text-strong);
   margin-bottom: 2px;
 }
 
 .schematic-sub {
   font-size: 13px;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
 }
 
 .schematic-badge {
@@ -81,9 +81,9 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0;
-  color: var(--color-green-accent);
-  background-color: var(--color-green-tint);
-  border: 1px solid var(--color-green-border);
+  color: var(--accent);
+  background-color: var(--accent-tint);
+  border: 1px solid var(--accent-border);
   padding: 3px 10px;
   border-radius: 2px;
 }
@@ -92,7 +92,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--color-green-accent);
+  background-color: var(--accent);
 }
 
 /* Milestones Bar (Pure HTML/CSS - Never distorted) */
@@ -123,11 +123,11 @@
 }
 
 .dot-green {
-  background-color: var(--color-green-accent);
+  background-color: var(--accent);
 }
 
 .dot-brown {
-  background-color: var(--color-brown-medium);
+  background-color: var(--text-medium);
 }
 
 /* ตำแหน่งป้าย peak ต้องตรงกับแกน x ของจุดในกราฟ SVG (viewBox กว้าง 1000)
@@ -137,7 +137,7 @@
 
 .schematic-canvas {
   padding: 8px 24px 8px;
-  background-color: var(--color-base-white);
+  background-color: var(--surface);
 }
 
 /* Timeline Axis (Pure HTML/CSS) */
@@ -146,21 +146,21 @@
   justify-content: space-between;
   padding: 8px 24px;
   font-size: 12px;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
   font-weight: 500;
   letter-spacing: 0;
-  border-top: 1px solid var(--color-brown-line-light);
+  border-top: 1px solid var(--line-light);
 }
 
 .schematic-footer {
   padding: 14px 24px;
-  background-color: var(--color-base-subtle);
-  border-top: 1px solid var(--color-brown-line);
+  background-color: var(--surface-subtle);
+  border-top: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  color: var(--color-brown-body);
+  color: var(--text);
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -173,7 +173,7 @@
 
 .schematic-meta-end {
   font-size: 12px;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
   letter-spacing: 0;
   font-weight: 400;
   font-style: italic;
@@ -183,6 +183,15 @@
 .legend-mark {
   font-weight: 700;
 }
-.legend-predicted { color: var(--color-green-accent); }
-.legend-buffer    { color: var(--color-brown-medium); }
-.legend-baseline  { color: var(--color-brown-line); }
+.legend-predicted { color: var(--accent); }
+.legend-buffer    { color: var(--text-medium); }
+.legend-baseline  { color: var(--chart-baseline); }
+
+/* ---- สีของกราฟ SVG (ใช้ class แทน stroke="#..." เพื่อให้เปลี่ยนตามธีมได้) ---- */
+.chart-grid     { stroke: var(--line-light); }
+.chart-axis     { stroke: var(--line); }
+.chart-band     { fill: var(--accent); fill-opacity: var(--chart-band-opacity); }
+.chart-demand   { stroke: var(--accent); }
+.chart-buffer   { stroke: var(--text-medium); }
+.chart-baseline { stroke: var(--chart-baseline); }
+.chart-dot      { fill: var(--surface); }

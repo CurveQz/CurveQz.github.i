@@ -6,7 +6,7 @@ footer {
   padding: 26px 0 56px;
   font-size: 14px;
   line-height: 1.7;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
 }
 
 .footer-flex {
@@ -18,14 +18,13 @@ footer {
 
 .footer-logo {
   height: 50px;
-  width: auto;
-  object-fit: contain;
+  color: var(--text-strong);
   opacity: 0.85;
 }
 
 .footer-link {
   text-decoration: underline;
-  color: var(--color-brown-ink);
+  color: var(--text-strong);
 }
 
 .footer-brand {
@@ -35,7 +34,7 @@ footer {
 }
 
 .footer-sub {
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
 }
 
 /* GitHub icon — ใช้ SVG เป็น mask เพื่อเปลี่ยนสีด้วย background-color ได้ */
@@ -43,13 +42,13 @@ footer {
   display: inline-block;
   width: 58px;
   height: 58px;
-  background-color: var(--color-brown-ink);
+  background-color: var(--text-strong);
   -webkit-mask: url('../assets/icons/github.svg') no-repeat center / contain;
   mask: url('../assets/icons/github.svg') no-repeat center / contain;
   transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
 .github-link:hover .icon-github {
-  background-color: var(--color-green-accent);
+  background-color: var(--accent);
   transform: scale(1.1);
 }

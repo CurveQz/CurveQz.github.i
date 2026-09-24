@@ -13,8 +13,8 @@ html {
 }
 
 body {
-  background-color: var(--color-base-white);
-  color: var(--color-brown-body);
+  background-color: var(--surface);
+  color: var(--text);
   font-family: 'Sarabun', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 16px;
   line-height: 1.8;
@@ -22,11 +22,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3, h4, .font-heading {
   font-family: 'Sarabun', 'Plus Jakarta Sans', sans-serif;
-  color: var(--color-brown-ink);
+  color: var(--text-strong);
   font-weight: 700;
   line-height: 1.42; /* CRITICAL FIX: Generous line-height for Thai vowel marks */
   letter-spacing: 0;
@@ -45,10 +46,10 @@ a {
 
 /* Hairline Precision Dividers */
 .hairline-top {
-  border-top: 1px solid var(--color-brown-line);
+  border-top: 1px solid var(--line);
 }
 .hairline-bottom {
-  border-bottom: 1px solid var(--color-brown-line);
+  border-bottom: 1px solid var(--line);
 }
 
 /* Media never overflows its column */
@@ -58,13 +59,13 @@ img, svg {
 
 /* Selection + keyboard focus */
 ::selection {
-  background-color: var(--color-green-tint);
-  color: var(--color-brown-ink);
+  background-color: var(--accent-tint);
+  color: var(--text-strong);
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--color-green-accent);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 2px;
 }

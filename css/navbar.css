@@ -6,9 +6,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--color-base-white);
+  background-color: var(--surface);
   width: 100%;
-  box-shadow: 0 1px 3px rgba(62, 40, 28, 0.04);
+  transition: background-color 0.2s ease;
+  box-shadow: 0 1px 3px var(--shadow-header);
 }
 
 .navbar {
@@ -27,20 +28,27 @@ header {
   font-weight: 700;
   font-size: 17px;
   letter-spacing: 0.08em;
-  color: var(--color-brown-ink);
+  color: var(--text-strong);
   text-decoration: none;
   flex-shrink: 0;
   transition: color 0.18s ease;
 }
 
 .navbar-brand:hover {
-  color: var(--color-green-accent);
+  color: var(--accent);
+}
+
+/* โลโก้เป็น mask สีตาม currentColor -> เปลี่ยนสีตามธีมและตอน hover เอง */
+.logo-mark {
+  display: inline-block;
+  aspect-ratio: 376 / 247;
+  background-color: currentColor;
+  -webkit-mask: url('../assets/brand/logo.png') no-repeat center / contain;
+  mask: url('../assets/brand/logo.png') no-repeat center / contain;
 }
 
 .brand-logo {
   height: 24px;
-  width: auto;
-  object-fit: contain;
   transition: transform 0.18s ease;
 }
 
@@ -52,7 +60,7 @@ header {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.05em;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
 }
 
 .nav-links {
@@ -64,7 +72,7 @@ header {
 .nav-link {
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-brown-body);
+  color: var(--text);
   text-decoration: none;
   position: relative;
   padding: 6px 0;
@@ -72,7 +80,7 @@ header {
 }
 
 .nav-link:hover {
-  color: var(--color-green-accent);
+  color: var(--accent);
 }
 
 .nav-link::after {
@@ -82,10 +90,37 @@ header {
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: var(--color-green-accent);
+  background-color: var(--accent);
   transition: width 0.18s ease;
 }
 
 .nav-link:hover::after {
   width: 100%;
 }
+
+/* ---------- ปุ่มสลับธีม ---------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-left: -4px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent-border);
+  background-color: var(--accent-tint);
+}
+
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun  { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+

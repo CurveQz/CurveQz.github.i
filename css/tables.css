@@ -8,8 +8,8 @@
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   margin-top: 8px;
-  border: 2px solid var(--color-brown-line);
-  background-color: var(--color-base-white);
+  border: 2px solid var(--line);
+  background-color: var(--surface);
 }
 
 /* -------------------------------------------------------
@@ -17,8 +17,8 @@
    ------------------------------------------------------- */
 .spec-table-wrapper {
   margin-top: 12px;
-  border: 1px solid var(--color-brown-line);
-  background-color: var(--color-base-white);
+  border: 1px solid var(--line);
+  background-color: var(--surface);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -28,9 +28,9 @@
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0;
-  color: var(--color-brown-ink);
-  background-color: var(--color-brown-surface);
-  border-bottom: 3px solid var(--color-brown-line);
+  color: var(--text-strong);
+  background-color: var(--surface-warm);
+  border-bottom: 3px solid var(--line);
 }
 
 .spec-table {
@@ -46,14 +46,14 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0;
-  color: var(--color-brown-muted);
-  border-bottom: 2px solid var(--color-brown-line);
-  background-color: var(--color-base-subtle);
+  color: var(--text-muted);
+  border-bottom: 2px solid var(--line);
+  background-color: var(--surface-subtle);
 }
 
 .spec-table td {
   padding: 14px 20px;
-  border-bottom: 1px solid var(--color-brown-line-light);
+  border-bottom: 1px solid var(--line-light);
   line-height: 1.65;
   vertical-align: top;
 }
@@ -69,22 +69,22 @@
 
 .spec-dim {
   font-weight: 600;
-  color: var(--color-brown-ink);
+  color: var(--text-strong);
 }
 
 /* -------------------------------------------------------
    Recipe BOM Explorer
    ------------------------------------------------------- */
 .bom-explorer-card {
-  border: 1px solid var(--color-brown-line);
-  background-color: var(--color-base-white);
+  border: 1px solid var(--line);
+  background-color: var(--surface);
   margin-top: 16px;
 }
 
 .bom-header {
   padding: 20px 24px;
-  background-color: var(--color-brown-surface);
-  border-bottom: 1px solid var(--color-brown-line);
+  background-color: var(--surface-warm);
+  border-bottom: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,8 +94,8 @@
 
 .bom-tabs {
   display: inline-flex;
-  background-color: var(--color-base-white);
-  border: 1px solid var(--color-brown-line);
+  background-color: var(--surface);
+  border: 1px solid var(--line);
   padding: 2px;
 }
 
@@ -106,18 +106,18 @@
   font-family: 'Sarabun', sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .bom-tab:hover {
-  color: var(--color-brown-ink);
+  color: var(--text-strong);
 }
 
 .bom-tab.active {
-  background-color: var(--color-brown-ink);
-  color: #FFFFFF;
+  background-color: var(--text-strong);
+  color: var(--on-strong);
   font-weight: 600;
 }
 
@@ -138,15 +138,15 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0;
-  color: var(--color-brown-muted);
-  border-bottom: 1px solid var(--color-brown-line);
-  background-color: var(--color-base-subtle);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--line);
+  background-color: var(--surface-subtle);
   text-align: left;
 }
 
 .bom-table td {
   padding: 14px 20px;
-  border-bottom: 1px solid var(--color-brown-line-light);
+  border-bottom: 1px solid var(--line-light);
   vertical-align: middle;
 }
 
@@ -156,12 +156,12 @@
 
 .bom-name {
   font-weight: 600;
-  color: var(--color-brown-ink);
+  color: var(--text-strong);
 }
 
 .bom-rule {
   font-size: 13px;
-  color: var(--color-brown-body);
+  color: var(--text);
 }
 
 .portion-val {
@@ -175,9 +175,9 @@
   font-size: 12px;
   font-weight: 500;
   padding: 2px 8px;
-  border: 1px solid var(--color-brown-line);
-  background-color: var(--color-base-subtle);
-  color: var(--color-brown-medium);
+  border: 1px solid var(--line);
+  background-color: var(--surface-subtle);
+  color: var(--text-medium);
 }
 
 .risk-tag {
@@ -189,40 +189,40 @@
 }
 
 .risk-tag.high {
-  color: #A34E36;
+  color: var(--risk-high);
 }
 
 .risk-tag.med {
-  color: #8C6A38;
+  color: var(--risk-med);
 }
 
 .risk-tag.low {
-  color: var(--color-green-accent);
+  color: var(--accent);
 }
 
 /* Factor Breakdown Visualizer */
 .factor-breakdown-card {
   margin-top: 16px;
-  border: 1px solid var(--color-brown-line);
+  border: 1px solid var(--line);
   padding: 24px;
-  background: var(--color-base-subtle);
+  background: var(--surface-subtle);
 }
 
 .bom-title {
   font-size: 19px;
-  color: var(--color-brown-ink);
+  color: var(--text-strong);
   margin-bottom: 4px;
 }
 
 .sim-tag {
   display: block;
   font-size: 13px;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
 }
 
 .factor-title {
   font-size: 17px;
-  color: var(--color-brown-ink);
+  color: var(--text-strong);
   margin-bottom: 16px;
 }
 
@@ -232,7 +232,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px 32px;
   font-size: 15px;
-  color: var(--color-brown-body);
+  color: var(--text);
 }
 
 .factor-list li {
@@ -248,18 +248,18 @@
   border-radius: 2px;
 }
 
-.swatch-history  { background-color: var(--color-green-accent); }
-.swatch-weather  { background-color: var(--color-green-sage); }
-.swatch-calendar { background-color: var(--color-brown-medium); }
-.swatch-promo    { background-color: var(--color-brown-muted); }
+.swatch-history  { background-color: var(--accent); }
+.swatch-weather  { background-color: var(--accent-soft); }
+.swatch-calendar { background-color: var(--text-medium); }
+.swatch-promo    { background-color: var(--text-muted); }
 
 .factor-note {
   margin-top: 20px;
   padding-top: 16px;
-  border-top: 1px solid var(--color-brown-line);
+  border-top: 1px solid var(--line);
   font-size: 14px;
   line-height: 1.7;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
 }
 
 /* -------------------------------------------------------
@@ -277,15 +277,15 @@
   padding: 16px 16px;
   font-size: 13px;
   letter-spacing: 0;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
   font-weight: 600;
-  border-bottom: 1px solid var(--color-brown-line);
-  background-color: var(--color-base-subtle);
+  border-bottom: 1px solid var(--line);
+  background-color: var(--surface-subtle);
 }
 
 .roster-table td {
   padding: 18px 16px;
-  border-bottom: 1px solid var(--color-brown-line);
+  border-bottom: 1px solid var(--line);
   vertical-align: middle;
 }
 
@@ -306,8 +306,8 @@
   object-fit: cover;
   object-position: center 15%;
   display: block;
-  border: 1px solid var(--color-brown-line);
-  background-color: var(--color-base-subtle);
+  border: 1px solid var(--line);
+  background-color: var(--surface-subtle);
   transition: transform 0.18s ease, border-color 0.18s ease;
 }
 
@@ -316,12 +316,12 @@
 }
 
 .roster-table tbody tr:hover {
-  background-color: var(--color-base-subtle);
+  background-color: var(--surface-subtle);
 }
 
 .roster-table tbody tr:hover .roster-avatar {
   transform: scale(1.04);
-  border-color: var(--color-green-accent);
+  border-color: var(--accent);
 }
 
 .role-badge {
@@ -330,9 +330,9 @@
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: var(--color-green-accent);
-  background-color: var(--color-green-tint);
-  border: 1px solid var(--color-green-border);
+  color: var(--accent);
+  background-color: var(--accent-tint);
+  border: 1px solid var(--accent-border);
   padding: 3px 8px;
   border-radius: 2px;
 }
@@ -340,7 +340,7 @@
 .student-id {
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
-  color: var(--color-brown-muted);
+  color: var(--text-muted);
 }
 
 .tech-tags {
@@ -355,8 +355,8 @@
   font-size: 11px;
   font-weight: 500;
   padding: 1px 6px;
-  background-color: var(--color-brown-surface);
-  border: 1px solid var(--color-brown-line);
-  color: var(--color-brown-medium);
+  background-color: var(--surface-warm);
+  border: 1px solid var(--line);
+  color: var(--text-medium);
   border-radius: 2px;
 }

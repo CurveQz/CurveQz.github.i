@@ -1,32 +1,83 @@
-/* 
+/*
   =======================================================
-  CURVEQZ — SWISS EDITORIAL DESIGN SYSTEM
-  Rule 60-30-10 & Materials:
-  - 60% Dominant Base: Pure White (#FFFFFF) & Archival Linen (#FAF7F2, #F5EFE8)
-  - 30% Structural Typographic Ink: Timber Earth Brown (#3E281C, #563E32, #DECFC3)
-  - 10% Focal Accent: Botanical Deep Sage Green (#3A694A, #5A8567, #EAF2EC)
-    =======================================================
-  NOTE: ไฟล์นี้ต้อง link/import เป็นไฟล์แรกสุด เพราะไฟล์อื่นเรียกใช้ตัวแปรจากตรงนี้
+  CURVEQZ — สีทั้งหมดของเว็บ
+  =======================================================
+  ชื่อตัวแปรบอก "หน้าที่" ไม่ใช่ชื่อสี เพราะธีมมืดใช้ชื่อเดียวกันแต่ค่าต่างกัน
+  เช่น --surface ในธีมสว่างคือขาว ในธีมมืดคือน้ำตาลเกือบดำ
+
+  จะเพิ่มสีใหม่: ใส่ทั้งใน :root (สว่าง) และ [data-theme="dark"] (มืด)
+  ธีมถูกตั้งที่ <html data-theme="..."> โดย js/theme.js
+
+  NOTE: ไฟล์นี้ต้อง link เป็นไฟล์แรกสุด เพราะไฟล์อื่นเรียกใช้ตัวแปรจากตรงนี้
+  =======================================================
 */
 
+/* ---------- ธีมสว่าง (ค่าเริ่มต้น) ---------- */
 :root {
-  /* 60% Dominant Clean Surfaces */
-  --color-base-white: #FFFFFF;
-  --color-base-subtle: #FAF7F2;
-  --color-base-linen: #F3ECE5;
+  color-scheme: light;
 
-  /* 30% Earth-tone Brown Structure & Typography */
-  --color-brown-ink: #3E281C;
-  --color-brown-body: #563E32;
-  --color-brown-medium: #7A5B49;
-  --color-brown-muted: #917564;
-  --color-brown-line: #DECFC3;
-  --color-brown-line-light: #EFE7DF;
-  --color-brown-surface: #F8F3EE;
+  /* พื้นหลัง */
+  --surface:        #FFFFFF;   /* พื้นหลักของหน้า */
+  --surface-subtle: #FAF7F2;   /* พื้นอ่อน: หัวตาราง, กล่อง quote */
+  --surface-warm:   #F8F3EE;   /* พื้นอุ่น: หัวกล่องกราฟ, ป้าย tag */
+  --surface-linen:  #F3ECE5;
 
-  /* 10% Earth-tone Green Focal Accent */
-  --color-green-accent: #3A694A;
-  --color-green-sage: #5A8567;
-  --color-green-tint: #EAF2EC;
-  --color-green-border: #C2D9C9;
+  /* ตัวอักษร */
+  --text-strong: #3E281C;      /* หัวข้อ, ตัวเน้น */
+  --text:        #563E32;      /* เนื้อหาทั่วไป */
+  --text-medium: #7A5B49;
+  --text-muted:  #836A5B;      /* คำอธิบายรอง (เข้มพอให้ผ่าน WCAG AA 4.5:1) */
+  --on-strong:   #FFFFFF;      /* ตัวอักษรบนพื้น --text-strong (ปุ่มเมนูที่เลือก) */
+
+  /* เส้นแบ่ง */
+  --line:       #DECFC3;
+  --line-light: #EFE7DF;
+
+  /* สีเน้น (เขียว) */
+  --accent:        #3A694A;
+  --accent-soft:   #5A8567;
+  --accent-tint:   #EAF2EC;    /* พื้นป้ายสีเขียว */
+  --accent-border: #C2D9C9;
+
+  /* สถานะความเสี่ยงในตารางวัตถุดิบ */
+  --risk-high: #A34E36;
+  --risk-med:  #8C6A38;
+
+  /* กราฟ */
+  --chart-baseline:     #DECFC3;
+  --chart-band-opacity: 0.06;
+
+  --shadow-header: rgba(62, 40, 28, 0.04);
+}
+
+/* ---------- ธีมมืด (น้ำตาลเข้มอุ่น) ---------- */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --surface:        #1C1612;
+  --surface-subtle: #231B16;
+  --surface-warm:   #2A211B;
+  --surface-linen:  #2F251E;
+
+  --text-strong: #F3E9DF;
+  --text:        #D9C9BC;
+  --text-medium: #C2A898;
+  --text-muted:  #A8917F;
+  --on-strong:   #1C1612;
+
+  --line:       #45362C;
+  --line-light: #33281F;
+
+  --accent:        #8FC09D;
+  --accent-soft:   #6FA07E;
+  --accent-tint:   #1F2C22;
+  --accent-border: #36533F;
+
+  --risk-high: #E7937A;
+  --risk-med:  #D8B477;
+
+  --chart-baseline:     #6E5B4E;
+  --chart-band-opacity: 0.12;
+
+  --shadow-header: rgba(0, 0, 0, 0.35);
 }
