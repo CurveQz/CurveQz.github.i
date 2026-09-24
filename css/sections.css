@@ -30,7 +30,7 @@
 }
 
 .metric-desc {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -54,7 +54,7 @@
 }
 
 .section-summary {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--text-muted);
   line-height: 1.65;
 }
@@ -88,14 +88,14 @@
 }
 
 .problem-card .item-label {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-strong);
   margin-bottom: 10px;
 }
 
 .problem-card .item-description {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text);
   line-height: 1.75;
 }
@@ -129,13 +129,13 @@
 }
 
 .obj-title {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-strong);
 }
 
 .objective-card .item-description {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text);
   line-height: 1.75;
 }
@@ -184,14 +184,14 @@
 }
 
 .node-title {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--text-strong);
   margin-bottom: 6px;
 }
 
 .node-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text-muted);
   line-height: 1.6;
 }

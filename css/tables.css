@@ -37,7 +37,7 @@
   width: 100%;
   min-width: 580px; /* Ensures columns never squeeze awkwardly */
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .spec-table th {
@@ -104,7 +104,7 @@
   background: transparent;
   padding: 6px 14px;
   font-family: 'Sarabun', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text-muted);
   cursor: pointer;
@@ -131,7 +131,7 @@
   width: 100%;
   min-width: 620px;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .bom-table th {
@@ -161,19 +161,19 @@
 }
 
 .bom-rule {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text);
 }
 
 .portion-val {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
 }
 
 .shelf-badge {
   display: inline-block;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   padding: 2px 8px;
   border: 1px solid var(--line);
@@ -185,7 +185,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -217,7 +217,7 @@
 
 .sim-tag {
   display: block;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-muted);
 }
 
@@ -258,7 +258,7 @@
   margin-top: 20px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
   color: var(--text-muted);
 }
@@ -271,7 +271,7 @@
   min-width: 680px; /* Protects columns from squeezing */
   border-collapse: collapse;
   text-align: left;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .roster-table th {
@@ -329,7 +329,7 @@
 .role-badge {
   display: inline-block;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--accent);
@@ -341,7 +341,7 @@
 
 .student-id {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
 }
 
@@ -354,7 +354,7 @@
 
 .tech-tag {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   padding: 1px 6px;
   background-color: var(--surface-warm);

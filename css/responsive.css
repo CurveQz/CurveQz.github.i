@@ -59,7 +59,13 @@
   }
 
   .section-summary {
-    font-size: 15px;
+    font-size: 16px;
+  }
+
+  /* ข้อความนำ 20px บนจอแคบทำให้บรรทัดสั้นแค่ ~28 ตัวอักษร ตาต้องกระโดดกลับบ่อย */
+  .lead-text {
+    font-size: 18px;
+    line-height: 1.75;
   }
 
   .section-body {
@@ -131,7 +137,7 @@
 
   .schematic-timeline {
     padding: 6px 12px;
-    font-size: 9.5px;
+    font-size: 11px;
   }
 
   .schematic-footer {
@@ -141,7 +147,7 @@
 
   .schematic-legend {
     gap: 10px;
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .vision-block {
@@ -174,7 +180,7 @@
     flex: 1;
     text-align: center;
     padding: 8px 4px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .factor-breakdown-card {
@@ -184,7 +190,7 @@
   .factor-list {
     grid-template-columns: 1fr;
     gap: 10px;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .roster-table th, .roster-table td {
