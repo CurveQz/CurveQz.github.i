@@ -42,10 +42,10 @@
           <span class="brand-sub">· PIM</span>
         </a>
         <div class="nav-links">
-          <a href="#problem" class="nav-link">ปัญหาที่พบ</a>
+          <a href="#problem" class="nav-link">ปัญหา</a>
           <a href="#vision" class="nav-link">วิสัยทัศน์</a>
-          <a href="#solution" class="nav-link">โซลูชันระบบ</a>
-          <a href="#team" class="nav-link">โครงสร้างองค์กร</a>
+          <a href="#solution" class="nav-link">การทำงาน</a>
+          <a href="#team" class="nav-link">ทีมงาน</a>
           <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false" aria-label="เปลี่ยนเป็นธีมมืด">
             <!-- แสดงพระจันทร์ตอนธีมสว่าง / พระอาทิตย์ตอนธีมมืด (สลับด้วย CSS) -->
             <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -147,12 +147,12 @@
         <div class="metric-item">
           <div class="metric-value">รับข้อมูลรายวัน</div>
           <div class="metric-label">ความถี่การประมวลผล</div>
-          <div class="metric-desc">วางแผนรับข้อมูลยอดขายและสต็อกจาก POS ในแต่ละวัน โดยตรวจสอบข้อมูลและสิทธิ์ที่แต่ละระบบรองรับก่อน</div>
+          <div class="metric-desc">วางแผนดึงยอดขายและสต็อกจาก POS วันละครั้ง หลังตรวจแล้วว่าระบบของร้านเปิดสิทธิ์ให้</div>
         </div>
         <div class="metric-item">
           <div class="metric-value">คำนวณจากสูตรอาหาร</div>
           <div class="metric-label">ขอบเขตการคำนวณ</div>
-          <div class="metric-desc">นำยอดขายที่คาดการณ์มาคำนวณปริมาณวัตถุดิบ ตามสูตรอาหารที่ร้านบันทึกไว้</div>
+          <div class="metric-desc">แปลงยอดขายที่คาดการณ์เป็นปริมาณวัตถุดิบ ตามสูตรที่ร้านบันทึกไว้</div>
         </div>
         <div class="metric-item">
           <div class="metric-value">คนตัดสินใจขั้นสุดท้าย</div>
@@ -167,67 +167,67 @@
   <section id="problem" class="section-block hairline-bottom">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">ความท้าทายในการบริหารสต็อก</h2>
+        <h2 class="section-title">ปัญหาในการสั่งวัตถุดิบ</h2>
         <p class="section-summary">สั่งมากไปก็เหลือทิ้ง สั่งน้อยไปก็ไม่พอขาย นี่คือปัญหาที่เราเลือกนำมาศึกษา</p>
       </div>
 
       <div class="section-body">
-        <p class="lead-text">จากการวิเคราะห์ของทีม ร้านอาหารที่มีหลายสาขาต้องวางแผนของสดให้สอดคล้องกับลูกค้าที่ต่างกันในแต่ละพื้นที่ เราจึงสนใจว่าข้อมูลจะช่วยให้แต่ละสาขาสั่งของได้เหมาะสมขึ้นอย่างไร</p>
+        <p class="lead-text">จากที่ทีมวิเคราะห์ ร้านอาหารหลายสาขาต้องสั่งของสดให้พอดีกับลูกค้าของแต่ละพื้นที่ ซึ่งไม่เหมือนกันเลย เราจึงอยากรู้ว่าข้อมูลจะช่วยให้แต่ละสาขาสั่งได้แม่นขึ้นแค่ไหน</p>
 
         <!-- 2x2 Problem Grid (Full Width, Perfectly Balanced) -->
         <div class="problem-grid">
           <div class="problem-card">
             <div class="item-label">สั่งมากเกิน แล้วต้องทิ้ง</div>
-            <div class="item-description">ประสบการณ์ช่วยให้ผู้จัดการประเมินยอดขายได้ แต่เมื่อความต้องการเปลี่ยนไป การใช้ความคุ้นเคยเพียงอย่างเดียวอาจไม่พอ หากสำรองของมากเกินจำเป็น วัตถุดิบบางส่วนอาจเสื่อมคุณภาพก่อนนำไปใช้ กลายเป็นต้นทุนที่ร้านต้องรับภาระ</div>
+            <div class="item-description">วัตถุดิบที่สั่งเกินมักเสียก่อนได้ใช้ และกลายเป็นต้นทุนที่ร้านต้องแบกเอง ประสบการณ์ของผู้จัดการช่วยกะยอดได้ แต่พอยอดขายเปลี่ยน การกะจากความเคยชินอย่างเดียวก็เริ่มพลาด</div>
           </div>
 
           <div class="problem-card">
             <div class="item-label">สั่งน้อยเกิน แล้วขายไม่ทัน</div>
-            <div class="item-description">วันหยุด โปรโมชัน หรือกิจกรรมใกล้ร้านอาจทำให้ยอดขายสูงกว่าคาด ส่วนสภาพอากาศอาจส่งผลต่างกันในแต่ละสาขา หากเตรียมของไม่ทัน ร้านอาจต้องหยุดขายบางเมนูและเสียโอกาสสร้างรายได้</div>
+            <div class="item-description">ถ้าเตรียมของไม่พอ ร้านต้องปิดบางเมนูและเสียรายได้ไป ยอดขายพุ่งเกินคาดได้จากวันหยุด โปรโมชัน หรือกิจกรรมใกล้ร้าน และสภาพอากาศก็ส่งผลกับแต่ละสาขาไม่เท่ากัน</div>
           </div>
 
           <div class="problem-card">
             <div class="item-label">แปลงจำนวนจานเป็นวัตถุดิบ</div>
-            <div class="item-description">แม้ร้านจะรู้ว่าขายแต่ละเมนูได้กี่จาน แต่ยังต้องคำนวณต่อว่าควรเตรียมเนื้อสัตว์ ผัก และเครื่องปรุงเท่าไร โดยเฉพาะวัตถุดิบที่ใช้ร่วมกันหลายเมนู งานส่วนนี้จึงใช้เวลาและมีโอกาสผิดพลาด</div>
+            <div class="item-description">รู้ยอดขายเป็นจานแล้ว ยังต้องแปลงต่อเป็นเนื้อสัตว์ ผัก และเครื่องปรุงอีกทอด ยิ่งวัตถุดิบไหนใช้หลายเมนู ยิ่งคำนวณนานและพลาดง่าย</div>
           </div>
 
           <div class="problem-card">
             <div class="item-label">ส่วนกลางมองไม่เห็นภาพรวม</div>
-            <div class="item-description">หากแต่ละสาขาสั่งซื้อและบันทึกข้อมูลแยกกัน ส่วนกลางอาจรวบรวมข้อมูลได้ไม่ทัน ทำให้มองเห็นได้ยากว่าสาขาใดมีของเหลือทิ้งมาก หรือควรปรับแผนการสั่งซื้ออย่างไร</div>
+            <div class="item-description">เมื่อแต่ละสาขาสั่งและจดข้อมูลแยกกัน ส่วนกลางก็รวมข้อมูลไม่ทัน จึงบอกได้ยากว่าสาขาไหนทิ้งของเยอะ หรือควรปรับการสั่งซื้อตรงไหน</div>
           </div>
         </div>
 
         <!-- Structured Comparison Spec Sheet (Full Width) -->
         <div class="spec-table-wrapper">
-          <div class="spec-table-title">ตารางเปรียบเทียบมิติการบริหารจัดการวัตถุดิบ</div>
+          <div class="spec-table-title">เทียบวิธีเดิมกับแนวทางของ CurveQz</div>
           <table class="spec-table">
             <thead>
               <tr>
-                <th class="col-dimension">มิติการทำงาน</th>
+                <th class="col-dimension">เรื่อง</th>
                 <th class="col-current">วิธีที่ร้านทำกันอยู่</th>
                 <th class="col-proposed">แนวทางที่ CurveQz เสนอ</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="spec-dim">การคาดเดายอดขาย</td>
-                <td>อิงความจำและความคุ้นเคยของผู้จัดการสาขาเป็นหลัก</td>
-                <td>นำยอดขายจริงย้อนหลังผสานสภาพอากาศ วันหยุด และโปรโมชัน</td>
+                <td class="spec-dim">การคาดยอดขาย</td>
+                <td>อาศัยความจำและความเคยชินของผู้จัดการ</td>
+                <td>ใช้ยอดขายย้อนหลัง ร่วมกับสภาพอากาศ วันหยุด และโปรโมชัน</td>
               </tr>
               <tr>
                 <td class="spec-dim">การแปลงสูตรอาหาร</td>
-                <td>ใช้การกะปริมาณด้วยสายตาหรือคำนวณแยกทีละเมนู</td>
-                <td>คำนวณอัตโนมัติผ่าน Recipe BOM รวมวัตถุดิบสดที่ใช้ร่วมกัน</td>
+                <td>กะด้วยสายตา หรือคิดแยกทีละเมนู</td>
+                <td>คำนวณอัตโนมัติจากสูตร (Recipe BOM) รวมยอดวัตถุดิบที่ใช้ร่วมกันหลายเมนู</td>
               </tr>
               <tr>
                 <td class="spec-dim">การควบคุมของเสีย</td>
-                <td>มักทราบยอดสูญเสียหลังของหมดอายุและต้องทิ้งแล้ว</td>
-                <td>ประเมินอัตราหมุนเวียนล่วงหน้าจากอายุเก็บรักษาของวัตถุดิบ</td>
+                <td>มักรู้ตัวตอนของหมดอายุและต้องทิ้งไปแล้ว</td>
+                <td>ประเมินล่วงหน้าว่าของจะใช้หมดทันอายุเก็บรักษาหรือไม่</td>
               </tr>
               <tr>
                 <td class="spec-dim">บทบาทผู้จัดการ</td>
-                <td>เสียเวลาหน้างานไปกับการคำนวณตัวเลขและกรอกใบสั่งของ</td>
-                <td>เป็นผู้อนุมัติขั้นสุดท้าย โดยมีระบบช่วยเตรียมข้อมูลให้</td>
+                <td>เสียเวลาหน้างานไปกับการคิดตัวเลขและกรอกใบสั่งของ</td>
+                <td>ตรวจและอนุมัติขั้นสุดท้าย โดยมีระบบเตรียมตัวเลขไว้ให้</td>
               </tr>
             </tbody>
           </table>
@@ -240,13 +240,13 @@
   <section id="vision" class="section-block hairline-bottom">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">วิสัยทัศน์และวัตถุประสงค์</h2>
-        <p class="section-summary">ช่วยให้ผู้จัดการมีข้อมูลประกอบการตัดสินใจ เพิ่มประสิทธิภาพ และใช้เวลากับงานคำนวณน้อยลง</p>
+        <h2 class="section-title">วิสัยทัศน์และเป้าหมาย</h2>
+        <p class="section-summary">ให้ผู้จัดการตัดสินใจจากข้อมูล และเสียเวลากับงานคำนวณน้อยลง</p>
       </div>
 
       <div class="section-body">
         <div class="vision-block">
-          <blockquote class="vision-quote">“ เราอยากให้ผู้จัดการใช้ข้อมูลร่วมกับประสบการณ์ในการวางแผน โดยมีระบบช่วยคำนวณงานที่ซ้ำและใช้เวลา เพื่อให้มีเวลาตรวจสถานการณ์จริงและตัดสินใจได้รอบคอบขึ้น ”</blockquote>
+          <blockquote class="vision-quote">“ให้ระบบรับงานคำนวณที่ซ้ำและกินเวลาไป ผู้จัดการจะได้มีเวลาดูหน้างานจริง แล้ววางแผนจากทั้งข้อมูลและประสบการณ์ของตัวเอง”</blockquote>
         </div>
 
         <!-- 3-Column Objective Grid (Full Width) -->
@@ -256,7 +256,7 @@
               <span class="item-index">01</span>
               <span class="obj-title">ควบคุมต้นทุนวัตถุดิบ</span>
             </div>
-            <div class="item-description">เราจะติดตามปริมาณและมูลค่าวัตถุดิบที่ทิ้ง เทียบกับช่วงก่อนทดลองใช้ พร้อมดูเหตุการณ์ของขาด เพื่อให้การลดของเสียไม่กระทบต่อความพร้อมในการขาย</div>
+            <div class="item-description">วัดปริมาณและมูลค่าวัตถุดิบที่ทิ้งเทียบกับก่อนทดลองใช้ และนับครั้งที่ของขาดควบคู่กัน เพื่อให้แน่ใจว่าลดของเสียแล้วร้านยังขายได้ตามปกติ</div>
           </div>
 
           <div class="objective-card">
@@ -264,7 +264,7 @@
               <span class="item-index">02</span>
               <span class="obj-title">วางแผนใช้ของสดให้ทันเวลา</span>
             </div>
-            <div class="item-description">วางแผนใช้วัตถุดิบให้สอดคล้องกับอายุการเก็บรักษาและความต้องการ เพื่อลดของค้างสต็อก โดยยังต้องอาศัยการตรวจคุณภาพจากพนักงานหน้างาน</div>
+            <div class="item-description">สั่งและใช้ของสดให้ทันอายุเก็บรักษา เพื่อลดของค้างสต็อก ส่วนการตรวจคุณภาพยังเป็นหน้าที่ของพนักงานหน้างาน</div>
           </div>
 
           <div class="objective-card">
@@ -272,7 +272,7 @@
               <span class="item-index">03</span>
               <span class="obj-title">ลดเวลาเตรียมรายการสั่งซื้อ</span>
             </div>
-            <div class="item-description">ให้ระบบเตรียมรายการสั่งซื้อเบื้องต้น แล้วผู้จัดการตรวจสอบและปรับแก้ เราจะวัดเวลาที่ใช้ก่อนและหลังทดลอง แทนการรับรองล่วงหน้าว่าจะลดเวลาได้เท่าไร</div>
+            <div class="item-description">ระบบร่างรายการสั่งซื้อ ผู้จัดการตรวจและปรับแก้ เราจะวัดเวลาที่ใช้จริงก่อนและหลังทดลอง แทนการสัญญาตัวเลขไว้ล่วงหน้า</div>
           </div>
         </div>
       </div>
@@ -283,30 +283,30 @@
   <section id="solution" class="section-block hairline-bottom">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">แนวทางพัฒนาระบบและ Machine Learning</h2>
+        <h2 class="section-title">CurveQz ทำงานอย่างไร</h2>
         <p class="section-summary">เชื่อมยอดขาย สูตรอาหาร และสต็อกเข้าด้วยกัน เพื่อช่วยวางแผนการสั่งซื้อ</p>
       </div>
       <div class="section-body">
-          <p class="lead-text">CurveQz มีแนวทางช่วยตอบคำถามว่า “รอบถัดไปควรสั่งวัตถุดิบอะไร และเท่าไร” โดยเริ่มทดสอบจากไฟล์ยอดขาย ก่อนพัฒนาการเชื่อมต่อ POS ผ่าน API ตามข้อมูลและเงื่อนไขที่ผู้ให้บริการรองรับ</p>
+          <p class="lead-text">CurveQz ออกแบบมาเพื่อตอบคำถามเดียว: “รอบหน้าควรสั่งวัตถุดิบอะไร เท่าไร” เราจะเริ่มทดสอบจากไฟล์ยอดขายก่อน แล้วค่อยเชื่อมกับ POS ผ่าน API ตามที่ผู้ให้บริการแต่ละเจ้าเปิดให้</p>
 
           <!-- System Flow Grid -->
           <div class="pipeline-grid">
             <div class="pipeline-node active">
               <div class="node-num">01</div>
               <div class="node-title">รับข้อมูลยอดขาย</div>
-              <div class="node-desc">เริ่มจากไฟล์ยอดขาย แล้วจึงพัฒนาการรับข้อมูลจาก POS ที่รองรับการเชื่อมต่อ</div>
+              <div class="node-desc">เริ่มจากไฟล์ยอดขาย แล้วค่อยต่อกับ POS ที่เปิดให้เชื่อมต่อ</div>
             </div>
 
             <div class="pipeline-node active">
               <div class="node-num">02</div>
               <div class="node-title">พยากรณ์ความต้องการ</div>
-              <div class="node-desc">ทดสอบยอดขายย้อนหลังร่วมกับวันหยุด โปรโมชัน อากาศ และกิจกรรมใกล้ร้าน</div>
+              <div class="node-desc">ทดสอบโมเดลด้วยยอดขายย้อนหลัง ร่วมกับวันหยุด โปรโมชัน อากาศ และกิจกรรมใกล้ร้าน</div>
             </div>
 
             <div class="pipeline-node active">
               <div class="node-num">03</div>
               <div class="node-title">คำนวณวัตถุดิบ</div>
-              <div class="node-desc">คำนวณวัตถุดิบจากยอดขายที่คาดไว้ โดยใช้สูตรและปริมาณต่อจานที่ร้านบันทึก</div>
+              <div class="node-desc">แปลงยอดขายที่คาดไว้เป็นวัตถุดิบ ตามสูตรและปริมาณต่อจานของร้าน</div>
             </div>
 
             <div class="pipeline-node active">
@@ -336,8 +336,8 @@
                     <th>วัตถุดิบสด</th>
                     <th>สัดส่วนต่อ 1 จาน</th>
                     <th>อายุของสด (Shelf-life)</th>
-                    <th>ระดับความเสี่ยงเน่าเสีย</th>
-                    <th>คำแนะนำการบริหารสต็อก</th>
+                    <th>ความเสี่ยงเน่าเสีย</th>
+                    <th>วิธีจัดการสต็อก</th>
                   </tr>
                 </thead>
                 <tbody id="bomTableBody">
@@ -356,7 +356,7 @@
               <li><span class="factor-swatch swatch-calendar"></span>วันหยุดและปฏิทินอีเวนต์</li>
               <li><span class="factor-swatch swatch-promo"></span>โปรโมชันของร้าน</li>
             </ul>
-            <p class="factor-note">ตอนนี้ยังตอบไม่ได้ว่าปัจจัยไหนมีน้ำหนักมากกว่ากัน ต้องรอผลจากการเทรนและทดสอบโมเดลด้วยข้อมูลจริงก่อน</p>
+            <p class="factor-note">ตอนนี้ยังบอกไม่ได้ว่าปัจจัยไหนสำคัญกว่ากัน ต้องรอผลการเทรนและทดสอบโมเดลกับข้อมูลจริงก่อน</p>
           </div>
         </div>
       </div>
@@ -366,8 +366,8 @@
   <section id="team" class="section-block hairline-bottom">
     <div class="container">
       <div class="section-header">
-        <h2 class="section-title">โครงสร้างทีมและบทบาทหน้าที่</h2>
-        <p class="section-summary">พวกเราเป็นทีมนักศึกษาจาก PIM ที่แบ่งหน้าที่กันพัฒนาโครงการ CurveQz</p>
+        <h2 class="section-title">ทีมงานและหน้าที่</h2>
+        <p class="section-summary">นักศึกษา PIM 6 คน แบ่งหน้าที่กันพัฒนา CurveQz</p>
       </div>
       <div class="section-body">
           <div class="table-responsive">
@@ -377,7 +377,7 @@
                 <th class="col-photo">สมาชิก</th>
                 <th class="col-role">ตำแหน่ง (Role)</th>
                 <th class="col-name">ชื่อ–นามสกุล / รหัสนักศึกษา</th>
-                <th>ขอบเขตความรับผิดชอบ</th>
+                <th>หน้าที่</th>
               </tr>
             </thead>
             <tbody id="rosterBody">
