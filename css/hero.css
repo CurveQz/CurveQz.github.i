@@ -43,6 +43,7 @@
    HERO ARCHITECTURAL SCHEMATIC (Swiss Landing Page Visual)
    ======================================================= */
 .hero-schematic-frame {
+  --chart-pad: 24px;   /* ระยะซ้ายขวาของกราฟ ใช้คำนวณตำแหน่งป้ายให้ตรงกับเส้น */
   margin: 36px 0 48px;
   border: 1px solid var(--line);
   background-color: var(--surface);
@@ -99,7 +100,7 @@
 .schematic-milestones {
   position: relative;
   height: 26px;
-  padding: 0 24px;
+  padding: 0 var(--chart-pad);
   margin-top: 14px;
 }
 
@@ -132,19 +133,19 @@
 
 /* ตำแหน่งป้าย peak ต้องตรงกับแกน x ของจุดในกราฟ SVG (viewBox กว้าง 1000)
    จุด lunch อยู่ที่ x=380 -> 38%, จุด dinner อยู่ที่ x=740 -> 74% */
-.milestone-lunch  { left: 38%; }
-.milestone-dinner { left: 74%; }
+.milestone-lunch  { left: calc(var(--chart-pad) + (100% - 2 * var(--chart-pad)) * 0.38); }
+.milestone-dinner { left: calc(var(--chart-pad) + (100% - 2 * var(--chart-pad)) * 0.74); }
 
 .schematic-canvas {
-  padding: 8px 24px 8px;
+  position: relative;
+  padding: 8px var(--chart-pad) 8px;
   background-color: var(--surface);
 }
 
 /* Timeline Axis (Pure HTML/CSS) */
 .schematic-timeline {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 24px;
+  position: relative;
+  height: 38px;
   font-size: 13px;
   color: var(--text-muted);
   font-weight: 500;
@@ -195,3 +196,77 @@
 .chart-buffer   { stroke: var(--data-warm); }
 .chart-baseline { stroke: var(--chart-baseline); }
 .chart-dot      { fill: var(--surface); }
+
+/* ---- ป้ายเวลาใต้กราฟ: วางตามเวลาจริงบนแกน ----
+   แกน x: 06:00 = 0, พีคกลางวัน 12:30 = 0.38, พีคเย็น 19:00 = 0.74, 22:00 = 1
+   ระหว่างจุดเหล่านี้คิดแบบเส้นตรง -> 12:00 = 0.3508, 18:30 = 0.7123
+   (ต้องตรงกับ CHART_TIME ใน js/main.js) */
+.schematic-timeline > span {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--chart-pad) + (100% - 2 * var(--chart-pad)) * var(--x));
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+.schematic-timeline .t-start   { --x: 0;      transform: translate(0, -50%); }
+.schematic-timeline .t-noon    { --x: 0.3508; }
+.schematic-timeline .t-evening { --x: 0.7123; }
+.schematic-timeline .t-end     { --x: 1;      transform: translate(-100%, -50%); }
+
+/* ---- กราฟวาดเส้นจากซ้ายไปขวาตอนเปิดหน้า ---- */
+.schematic-canvas svg {
+  animation: chart-draw 1.6s cubic-bezier(0.22, 0.8, 0.3, 1) 0.15s both;
+}
+.milestone-box {
+  animation: chart-fade 0.5s ease both;
+}
+.milestone-lunch  { animation-delay: 0.8s; }   /* โผล่ตอนเส้นวาดถึงจุดพีค */
+.milestone-dinner { animation-delay: 1.3s; }
+
+@keyframes chart-draw {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+@keyframes chart-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---- เส้นบอกเวลาตอนชี้เมาส์/แตะกราฟ (สร้างใน js/main.js) ---- */
+.schematic-canvas svg {
+  cursor: crosshair;
+  touch-action: pan-y;   /* แตะแล้วยังเลื่อนหน้าขึ้นลงได้ */
+}
+.chart-hover {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.chart-hover[hidden] { display: none; }
+.chart-hover-line {
+  position: absolute;
+  width: 1px;
+  background-color: var(--text-muted);
+  opacity: 0.6;
+}
+.chart-hover-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background-color: var(--surface);
+  border: 2px solid var(--accent);
+}
+.chart-hover-tip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 12px));
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: var(--text-strong);
+  color: var(--surface);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}

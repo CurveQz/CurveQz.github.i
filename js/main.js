@@ -5,6 +5,7 @@
  * 1. เลื่อนหน้าแบบนุ่มนวลเมื่อกดลิงก์ในแถบเมนู
  * 2. สร้างตารางวัตถุดิบ + ปุ่มสลับเมนู + เครื่องคำนวณจำนวนจาน จาก MENUS
  * 3. สร้างตารางทีม จาก TEAM
+ * 4. กราฟหน้าแรก: ชี้/แตะแล้วบอกเวลาและช่วงของวัน
  */
 
 // กัน HTML แปลกๆ หลุดเข้าไปในหน้า ถ้ามีคนพิมพ์ < หรือ & ใน data.js
@@ -143,8 +144,95 @@ function renderTeam() {
   `).join('');
 }
 
+/* ---------- 4. กราฟหน้าแรก: ชี้/แตะแล้วบอกเวลา ---------- */
+// [ตำแหน่ง x ใน viewBox 0-1000, เวลาเป็นนาทีนับจากเที่ยงคืน]
+// ต้องตรงกับจุดพีคในกราฟ SVG และตำแหน่งป้ายเวลาใน css/hero.css
+const CHART_TIME = [[0, 6 * 60], [380, 12 * 60 + 30], [740, 19 * 60], [1000, 22 * 60]];
+const CHART_PHASES = [
+  [11 * 60, 'ช่วงเตรียมของ'],
+  [14 * 60, 'ช่วงพีคกลางวัน'],
+  [17 * 60 + 30, 'ช่วงบ่าย'],
+  [21 * 60, 'ช่วงพีคเย็น'],
+  [Infinity, 'ใกล้ปิดร้าน'],
+];
+
+function xToMinutes(x) {
+  for (let i = 1; i < CHART_TIME.length; i++) {
+    const [x0, t0] = CHART_TIME[i - 1];
+    const [x1, t1] = CHART_TIME[i];
+    if (x <= x1) return t0 + ((x - x0) / (x1 - x0)) * (t1 - t0);
+  }
+  return CHART_TIME[CHART_TIME.length - 1][1];
+}
+
+function formatClock(minutes) {
+  const m = Math.round(minutes / 5) * 5;            // ปัดทีละ 5 นาที อ่านง่ายกว่า
+  return `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+}
+
+function setupChartHover() {
+  const canvas = document.querySelector('.schematic-canvas');
+  const svg = canvas && canvas.querySelector('svg');
+  const curve = svg && svg.querySelector('path.chart-demand');
+  if (!curve) return;
+
+  // เก็บจุดบนเส้นไว้ล่วงหน้า 200 จุด หาค่า y จาก x ได้เร็ว
+  const len = curve.getTotalLength();
+  const samples = Array.from({ length: 201 }, (_, i) => curve.getPointAtLength((len * i) / 200));
+  const yAt = (x) => {
+    const i = samples.findIndex((pt) => pt.x >= x);
+    if (i <= 0) return samples[Math.max(i, 0)].y;
+    const a = samples[i - 1], b = samples[i];
+    return a.y + ((x - a.x) / (b.x - a.x || 1)) * (b.y - a.y);
+  };
+
+  canvas.insertAdjacentHTML('beforeend', `
+    <div class="chart-hover" hidden>
+      <span class="chart-hover-line"></span>
+      <span class="chart-hover-dot"></span>
+      <span class="chart-hover-tip"></span>
+    </div>`);
+  const hover = canvas.querySelector('.chart-hover');
+  const line = hover.querySelector('.chart-hover-line');
+  const dot = hover.querySelector('.chart-hover-dot');
+  const tip = hover.querySelector('.chart-hover-tip');
+
+  const show = (e) => {
+    const box = svg.getBoundingClientRect();
+    const outer = canvas.getBoundingClientRect();
+    const px = Math.min(Math.max(e.clientX - box.left, 0), box.width);
+    const vx = (px / box.width) * 1000;
+    const vb = svg.viewBox.baseVal;
+    const py = (yAt(vx) / vb.height) * box.height;
+    const left = box.left - outer.left + px;
+    const top = box.top - outer.top;
+
+    const minutes = xToMinutes(vx);
+    const phase = CHART_PHASES.find(([end]) => minutes < end)[1];
+
+    line.style.left = `${left}px`;
+    line.style.top = `${top}px`;
+    line.style.height = `${box.height}px`;
+    dot.style.left = `${left}px`;
+    dot.style.top = `${top + py}px`;
+    tip.textContent = `${formatClock(minutes)} · ${phase}`;
+    hover.hidden = false;                       // ต้องแสดงก่อน ถึงจะวัดความกว้างกล่องได้
+    // กันกล่องข้อความล้นขอบซ้ายขวา
+    const half = tip.offsetWidth / 2 + 4;
+    tip.style.left = `${Math.min(Math.max(left, half), outer.width - half)}px`;
+    tip.style.top = `${top + py}px`;
+  };
+
+  svg.addEventListener('pointermove', show);
+  svg.addEventListener('pointerdown', show);
+  // เมาส์: ซ่อนเมื่อออกจากกราฟ / นิ้ว: ค้างไว้ให้อ่าน แล้วซ่อนเมื่อแตะที่อื่น
+  svg.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hover.hidden = true; });
+  document.addEventListener('pointerdown', (e) => { if (!svg.contains(e.target)) hover.hidden = true; });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setupSmoothScroll();
   setupBomExplorer();
   renderTeam();
+  setupChartHover();
 });

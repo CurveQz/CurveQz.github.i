@@ -125,6 +125,7 @@
   }
 
   .hero-schematic-frame {
+    --chart-pad: 12px;
     margin: 24px 0 36px;
   }
 
@@ -137,12 +138,18 @@
   }
 
   .schematic-canvas {
-    padding: 6px 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 
+  /* จอแคบ: เหลือแค่เวลา ไม่งั้นป้ายชนกัน */
   .schematic-timeline {
-    padding: 6px 12px;
-    font-size: 11px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .schematic-timeline .t-label {
+    display: none;
   }
 
   .schematic-footer {
