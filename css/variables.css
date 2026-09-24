@@ -27,7 +27,6 @@
   --text:        #563E32;      /* เนื้อหาทั่วไป */
   --text-medium: #7A5B49;
   --text-muted:  #836A5B;      /* คำอธิบายรอง (เข้มพอให้ผ่าน WCAG AA 4.5:1) */
-  --on-strong:   #FFFFFF;      /* ตัวอักษรบนพื้น --text-strong (ปุ่มเมนูที่เลือก) */
 
   /* เส้นแบ่ง */
   --line:       #DECFC3;
@@ -43,9 +42,20 @@
   --risk-high: #A34E36;
   --risk-med:  #8C6A38;
 
+  /* สีรองของข้อมูล: เส้นสต็อกสำรอง, พีคเย็น, ปัจจัยวันหยุด */
+  --data-warm: #7A5B49;
+
+  /* ปุ่มเมนูที่เลือกอยู่ในตารางวัตถุดิบ */
+  --tab-active-bg:     #3E281C;
+  --tab-active-text:   #FFFFFF;
+  --tab-active-border: #3E281C;
+
   /* กราฟ */
   --chart-baseline:     #DECFC3;
   --chart-band-opacity: 0.06;
+
+  /* รูปทีม (1 = ไม่ปรับ) */
+  --photo-brightness: 1;
 
   --shadow-header: rgba(62, 40, 28, 0.04);
 }
@@ -63,7 +73,6 @@
   --text:        #C9CBCE;
   --text-medium: #A9ACB0;
   --text-muted:  #94989D;
-  --on-strong:   #161718;
 
   --line:       #34373B;
   --line-light: #26282B;
@@ -76,8 +85,16 @@
   --risk-high: #E58C74;
   --risk-med:  #D6B06E;
 
+  --data-warm: #C4A27E;        /* สีแทนอุ่น เก็บร่องรอยสีน้ำตาลของแบรนด์ไว้ในข้อมูล */
+
+  --tab-active-bg:     #1B2A20; /* เขียวเข้ม แทนกล่องขาวที่จ้าเกินไป */
+  --tab-active-text:   #7FB08E;
+  --tab-active-border: #2F4A37;
+
   --chart-baseline:     #5C6066;
   --chart-band-opacity: 0.12;
+
+  --photo-brightness: 0.9;      /* รูปพื้นขาวไม่แสบตาบนพื้นมืด */
 
   --shadow-header: rgba(0, 0, 0, 0.4);
 }

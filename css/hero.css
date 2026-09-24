@@ -127,7 +127,7 @@
 }
 
 .dot-brown {
-  background-color: var(--text-medium);
+  background-color: var(--data-warm);
 }
 
 /* ตำแหน่งป้าย peak ต้องตรงกับแกน x ของจุดในกราฟ SVG (viewBox กว้าง 1000)
@@ -184,7 +184,7 @@
   font-weight: 700;
 }
 .legend-predicted { color: var(--accent); }
-.legend-buffer    { color: var(--text-medium); }
+.legend-buffer    { color: var(--data-warm); }
 .legend-baseline  { color: var(--chart-baseline); }
 
 /* ---- สีของกราฟ SVG (ใช้ class แทน stroke="#..." เพื่อให้เปลี่ยนตามธีมได้) ---- */
@@ -192,6 +192,6 @@
 .chart-axis     { stroke: var(--line); }
 .chart-band     { fill: var(--accent); fill-opacity: var(--chart-band-opacity); }
 .chart-demand   { stroke: var(--accent); }
-.chart-buffer   { stroke: var(--text-medium); }
+.chart-buffer   { stroke: var(--data-warm); }
 .chart-baseline { stroke: var(--chart-baseline); }
 .chart-dot      { fill: var(--surface); }
