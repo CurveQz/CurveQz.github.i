@@ -1,109 +1,105 @@
-/**
- * CurveQz — Swiss Editorial Interactive Engine
- * Client script for smooth navigation, Recipe BOM Explorer, and tactile feedback
+/*
+ * CurveQz — สคริปต์ของหน้าเว็บ
+ * ข้อมูลทีมและเมนูอยู่ใน js/data.js (ต้องโหลดก่อนไฟล์นี้)
+ *
+ * 1. เลื่อนหน้าแบบนุ่มนวลเมื่อกดลิงก์ในแถบเมนู
+ * 2. สร้างตารางวัตถุดิบ + ปุ่มสลับเมนู จาก MENUS
+ * 3. สร้างตารางทีม จาก TEAM
  */
 
+// กัน HTML แปลกๆ หลุดเข้าไปในหน้า ถ้ามีคนพิมพ์ < หรือ & ใน data.js
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+/* ---------- 1. Smooth scroll (หักความสูงแถบเมนูที่ติดด้านบน) ---------- */
+function setupSmoothScroll() {
+  const header = document.querySelector('header');
+
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href');
+      const target = id && id !== '#' ? document.querySelector(id) : null;
+      if (!target) return;
+
+      e.preventDefault();
+      const offset = header ? header.offsetHeight : 0;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      history.pushState(null, '', id);
+    });
+  });
+}
+
+/* ---------- 2. ตารางวัตถุดิบต่อหนึ่งจาน ---------- */
+function renderBomRows(menu) {
+  const body = document.getElementById('bomTableBody');
+  if (!body) return;
+
+  body.innerHTML = menu.items.map((item) => `
+    <tr>
+      <td class="bom-name">${escapeHtml(item.name)}</td>
+      <td><span class="portion-val">${escapeHtml(item.portion)}</span></td>
+      <td><span class="shelf-badge">${escapeHtml(item.shelf)}</span></td>
+      <td><span class="risk-tag ${escapeHtml(item.risk)}"><span aria-hidden="true">●</span> ${escapeHtml(item.riskText)}</span></td>
+      <td class="bom-rule">${escapeHtml(item.rule)}</td>
+    </tr>
+  `).join('');
+}
+
+function setupBomExplorer() {
+  const tabs = document.getElementById('bomTabs');
+  if (!tabs || typeof MENUS === 'undefined' || MENUS.length === 0) return;
+
+  tabs.innerHTML = MENUS.map((menu, i) => `
+    <button type="button" class="bom-tab${i === 0 ? ' active' : ''}" data-index="${i}">
+      ${escapeHtml(menu.label)}
+    </button>
+  `).join('');
+
+  tabs.addEventListener('click', (e) => {
+    const btn = e.target.closest('.bom-tab');
+    if (!btn) return;
+    tabs.querySelectorAll('.bom-tab').forEach((t) => t.classList.remove('active'));
+    btn.classList.add('active');
+    renderBomRows(MENUS[Number(btn.dataset.index)]);
+  });
+
+  renderBomRows(MENUS[0]);
+}
+
+/* ---------- 3. ตารางทีม ---------- */
+function renderTeam() {
+  const body = document.getElementById('rosterBody');
+  if (!body || typeof TEAM === 'undefined') return;
+
+  body.innerHTML = TEAM.map((m) => `
+    <tr>
+      <td class="roster-avatar-cell">
+        <img src="assets/team/${escapeHtml(m.photo)}" alt="${escapeHtml(m.name)}" class="roster-avatar"
+             loading="lazy" decoding="async" width="54" height="54" />
+      </td>
+      <td><span class="role-badge">${escapeHtml(m.role)}</span></td>
+      <td>
+        <strong>${escapeHtml(m.name)}</strong><br />
+        <span class="student-id">${escapeHtml(m.studentId)}</span>
+      </td>
+      <td>
+        ${escapeHtml(m.duty)}
+        <div class="tech-tags">
+          ${m.tags.map((t) => `<span class="tech-tag">${escapeHtml(t)}</span>`).join('')}
+        </div>
+      </td>
+    </tr>
+  `).join('');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(
-    '%cCurveQz%c — AI-Powered Demand Forecasting & Inventory Optimization (PIM)',
-    'color: #3A694A; font-weight: bold; font-size: 14px;',
-    'color: #563E32; font-size: 13px;'
-  );
-
-  // Smooth scroll for internal navigation with exact dynamic navbar offset
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId && targetId !== '#') {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          const header = document.querySelector('header');
-          const headerHeight = header ? header.offsetHeight : 0;
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-
-          if (history.pushState) {
-            history.pushState(null, null, targetId);
-          }
-        }
-      }
-    });
-  });
-
-  /* ========================================================
-     RECIPE BOM EXPLORER (Product Feature Component)
-     ======================================================== */
-  const bomData = {
-    basil: [
-      { name: 'เนื้อหมูบดอนามัย', portion: '150 กรัม', shelf: '2 วัน', risk: 'high', riskText: 'เสี่ยงสูง (สด)', rule: 'สั่งแบบ Daily Batch ตรวจวันหมดอายุทุกเช้า' },
-      { name: 'ใบกะเพราสดคัดใบ', portion: '20 กรัม', shelf: '1-2 วัน', risk: 'high', riskText: 'เสี่ยงสูงมาก', rule: 'รับจากตลาดสดรอบเช้า ไม่ค้างคืนข้ามวัน' },
-      { name: 'พริกขี้หนูจินดาแดง', portion: '10 กรัม', shelf: '5 วัน', risk: 'med', riskText: 'เสี่ยงปานกลาง', rule: 'สำรองสต็อกไม่เกิน 3 วัน รักษาความแห้ง' },
-      { name: 'กระเทียมไทยแกะกลีบ', portion: '10 กรัม', shelf: '14 วัน', risk: 'low', riskText: 'ความเสี่ยงต่ำ', rule: 'สั่งซื้อเป็นรอบสัปดาห์ เก็บในที่อากาศถ่ายเท' },
-      { name: 'ซอสผัดกะเพราปรุงสำเร็จ', portion: '25 มล.', shelf: '45 วัน', risk: 'low', riskText: 'ความเสี่ยงต่ำ', rule: 'สต็อกขวดแก้ว บันทึกรอบ First-In First-Out' }
-    ],
-    curry: [
-      { name: 'เนื้อสะโพกไก่หั่นเต๋า', portion: '160 กรัม', shelf: '2 วัน', risk: 'high', riskText: 'เสี่ยงสูง (สด)', rule: 'แช่เย็น 0-4°C สั่งซื้อวันต่อวันตามรอบพยากรณ์' },
-      { name: 'พริกแกงเผ็ดตำมือ', portion: '35 กรัม', shelf: '7 วัน', risk: 'med', riskText: 'เสี่ยงปานกลาง', rule: 'สั่งซื้อรอบ 3 วัน เก็บในภาชนะปิดมิดชิด' },
-      { name: 'ถั่วฝักยาวสดหั่นท่อน', portion: '40 กรัม', shelf: '3 วัน', risk: 'high', riskText: 'เสี่ยงสูง', rule: 'ตรวจความกรอบหน้างาน ไม่แช่น้ำขัง' },
-      { name: 'ใบมะกรูดฉีกเส้น', portion: '5 กรัม', shelf: '4 วัน', risk: 'med', riskText: 'เสี่ยงปานกลาง', rule: 'ห่อกระดาษซับความชื้นก่อนแช่ตู้เย็น' }
-    ],
-    tomyum: [
-      { name: 'กุ้งขาวสดไซส์มาตรฐาน', portion: '120 กรัม', shelf: '1-2 วัน', risk: 'high', riskText: 'เสี่ยงสูงมาก', rule: 'ดองน้ำแข็งอุณหภูมิใกล้ 0°C สั่งวันต่อวัน' },
-      { name: 'เห็ดฟาง / เห็ดนางฟ้า', portion: '50 กรัม', shelf: '2 วัน', risk: 'high', riskText: 'เสี่ยงสูงมาก', rule: 'สั่งเช้าใช้หมดเย็น เห็ดเปลี่ยนสีเร็ว' },
-      { name: 'ชุดสมุนไพร ข่า ตะไคร้', portion: '30 กรัม', shelf: '7 วัน', risk: 'med', riskText: 'เสี่ยงปานกลาง', rule: 'สั่งซื้อรอบ 4-5 วัน ล้างและหั่นพร้อมใช้' },
-      { name: 'น้ำมะนาวแท้คั้นสด', portion: '25 มล.', shelf: '2 วัน', risk: 'high', riskText: 'เสี่ยงสูง', rule: 'คั้นสดรอบวันเพื่อรักษากลิ่นหอมธรรมชาติ' }
-    ]
-  };
-
-  const bomTableBody = document.getElementById('bomTableBody');
-  const bomTabs = document.querySelectorAll('.bom-tab');
-
-  function renderBom(dishKey) {
-    if (!bomTableBody) return;
-    const items = bomData[dishKey] || [];
-    
-    bomTableBody.innerHTML = items.map((item) => `
-      <tr>
-        <td style="font-weight: 600; color: var(--color-brown-ink);">${item.name}</td>
-        <td><span class="portion-val">${item.portion}</span></td>
-        <td><span class="shelf-badge">${item.shelf}</span></td>
-        <td>
-          <span class="risk-tag ${item.risk}">
-            <span>●</span> ${item.riskText}
-          </span>
-        </td>
-        <td style="color: var(--color-brown-body); font-size: 13px;">${item.rule}</td>
-      </tr>
-    `).join('');
-  }
-
-  bomTabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      bomTabs.forEach((t) => t.classList.remove('active'));
-      tab.classList.add('active');
-      const dish = tab.getAttribute('data-dish');
-      renderBom(dish);
-    });
-  });
-
-  // Initial render of BOM table
-  renderBom('basil');
-
-  /* ========================================================
-     ROSTER TABLE HOVER FEEDBACK
-     ======================================================== */
-  const rosterRows = document.querySelectorAll('.roster-table tbody tr');
-  rosterRows.forEach((row) => {
-    row.addEventListener('mouseenter', () => {
-      row.style.backgroundColor = 'var(--color-base-subtle)';
-    });
-    row.addEventListener('mouseleave', () => {
-      row.style.backgroundColor = 'transparent';
-    });
-  });
+  setupSmoothScroll();
+  setupBomExplorer();
+  renderTeam();
 });

@@ -308,10 +308,8 @@
                 <span class="sim-tag">ตัวอย่างสูตรที่เราใช้ทดสอบการคำนวณ</span>
               </div>
               <!-- Tab Switcher -->
-              <div class="bom-tabs">
-                <button type="button" class="bom-tab active" data-dish="basil">ข้าวกะเพราหมูสับ</button>
-                <button type="button" class="bom-tab" data-dish="curry">ผัดพริกแกงไก่</button>
-                <button type="button" class="bom-tab" data-dish="tomyum">ต้มยำกุ้งน้ำใส</button>
+              <div class="bom-tabs" id="bomTabs" role="group" aria-label="เลือกเมนู">
+                <!-- สร้างจาก MENUS ใน js/data.js -->
               </div>
             </div>
 
@@ -327,7 +325,7 @@
                   </tr>
                 </thead>
                 <tbody id="bomTableBody">
-                  <!-- Injected via JavaScript -->
+                  <!-- สร้างจาก MENUS ใน js/data.js -->
                 </tbody>
               </table>
             </div>
@@ -366,103 +364,9 @@
                 <th>ขอบเขตความรับผิดชอบ</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td class="roster-avatar-cell"><img src="assets/team/soda.jpg" alt="นายศนุชา สอนเดช" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
-                <td><span class="role-badge">CEO & DATA</span></td>
-                <td>
-                  <strong>นายศนุชา สอนเดช</strong><br />
-                  <span class="student-id">6752300542</span>
-                </td>
-                <td>
-                  กำหนดทิศทางโครงการ ประเมินความคุ้มค่าทางธุรกิจ และออกแบบกระบวนการจัดการข้อมูลกับโครงสร้างสูตรอาหาร (Data Pipeline & Recipe BOM)
-                  <div class="tech-tags">
-                    <span class="tech-tag">Business Strategy</span>
-                    <span class="tech-tag">Data Pipeline</span>
-                    <span class="tech-tag">Recipe BOM</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="roster-avatar-cell"><img src="assets/team/nut.jpg" alt="นายนัธทวัฒน์ อุ้มญาติ" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
-                <td><span class="role-badge">CTO</span></td>
-                <td>
-                  <strong>นายนัธทวัฒน์ อุ้มญาติ</strong><br />
-                  <span class="student-id">6752300364</span>
-                </td>
-                <td>
-                  ออกแบบสถาปัตยกรรมระบบ กำกับการพัฒนาระบบหลังบ้าน การเชื่อมต่อ POS API และการประมวลผลด้วย Machine Learning
-                  <div class="tech-tags">
-                    <span class="tech-tag">System Architecture</span>
-                    <span class="tech-tag">FastAPI / Python</span>
-                    <span class="tech-tag">ML Modeling</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="roster-avatar-cell"><img src="assets/team/tonkla.jpg" alt="นายอาณัติ หลีเกี๊ยะ" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
-                <td><span class="role-badge">DEVOPS</span></td>
-                <td>
-                  <strong>นายอาณัติ หลีเกี๊ยะ</strong><br />
-                  <span class="student-id">6752300666</span>
-                </td>
-                <td>
-                  ดูแลโครงสร้างพื้นฐานคลาวด์ การจัดสภาพแวดล้อมด้วย Docker และกระบวนการทดสอบและส่งมอบระบบอัตโนมัติ (CI/CD) รวมถึงการนำโมเดลไปใช้งาน
-                  <div class="tech-tags">
-                    <span class="tech-tag">Docker Containers</span>
-                    <span class="tech-tag">CI/CD Pipeline</span>
-                    <span class="tech-tag">Cloud Deploy</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="roster-avatar-cell"><img src="assets/team/ter.jpg" alt="นายกษิดิ์เดช คู่คิด" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
-                <td><span class="role-badge">SECURITY & IT OPS</span></td>
-                <td>
-                  <strong>นายกษิดิ์เดช คู่คิด</strong><br />
-                  <span class="student-id">6752300712</span>
-                </td>
-                <td>
-                  ดูแลความมั่นคงปลอดภัยของระบบและข้อมูล กำหนดสิทธิ์การเข้าถึง API และติดตามความพร้อมใช้งานของระบบ
-                  <div class="tech-tags">
-                    <span class="tech-tag">API Authentication</span>
-                    <span class="tech-tag">Access Control</span>
-                    <span class="tech-tag">Log Monitoring</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="roster-avatar-cell"><img src="assets/team/kong.jpg" alt="นายก้องภพ สุขทรัพย์" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
-                <td><span class="role-badge">QA</span></td>
-                <td>
-                  <strong>นายก้องภพ สุขทรัพย์</strong><br />
-                  <span class="student-id">6752300534</span>
-                </td>
-                <td>
-                  วางแผนและดำเนินการทดสอบคุณภาพซอฟต์แวร์ ตรวจสอบการคำนวณวัตถุดิบและคำแนะนำสั่งซื้อ รวมถึงประสานการทดสอบการยอมรับโดยผู้ใช้ (UAT)
-                  <div class="tech-tags">
-                    <span class="tech-tag">UAT Testing</span>
-                    <span class="tech-tag">Calculation Audit</span>
-                    <span class="tech-tag">Edge Cases</span>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td class="roster-avatar-cell"><img src="assets/team/phai.jpg" alt="นางสาวธนัชพร ช่วยนาค" class="roster-avatar" loading="lazy" decoding="async" width="54" height="54" /></td>
-                <td><span class="role-badge">UX/UI & MARKET</span></td>
-                <td>
-                  <strong>นางสาวธนัชพร ช่วยนาค</strong><br />
-                  <span class="student-id">6752300861</span>
-                </td>
-                <td>
-                  ศึกษาความต้องการของผู้ใช้และตลาด ออกแบบประสบการณ์และส่วนติดต่อผู้ใช้ (UX/UI) สำหรับผู้จัดการสาขาและแดชบอร์ดสำนักงานใหญ่
-                  <div class="tech-tags">
-                    <span class="tech-tag">Figma Design</span>
-                    <span class="tech-tag">User Flow</span>
-                    <span class="tech-tag">Market Research</span>
-                  </div>
-                </td>
-              </tr>
+            <tbody id="rosterBody">
+              <!-- สร้างจาก TEAM ใน js/data.js -->
+              <noscript><tr><td colspan="4">เปิด JavaScript เพื่อดูรายชื่อทีม</td></tr></noscript>
             </tbody>
           </table>
           </div>
@@ -490,6 +394,7 @@
     </div>
   </footer>
 
+  <script src="js/data.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

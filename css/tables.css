@@ -149,6 +149,16 @@
   border-bottom: none;
 }
 
+.bom-name {
+  font-weight: 600;
+  color: var(--color-brown-ink);
+}
+
+.bom-rule {
+  font-size: 13px;
+  color: var(--color-brown-body);
+}
+
 .portion-val {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
@@ -284,6 +294,14 @@
   border: 1px solid var(--color-brown-line);
   background-color: var(--color-base-subtle);
   transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.roster-table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.roster-table tbody tr:hover {
+  background-color: var(--color-base-subtle);
 }
 
 .roster-table tbody tr:hover .roster-avatar {
