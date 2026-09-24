@@ -181,6 +181,15 @@
     display: flex;
   }
 
+  .bom-calc {
+    padding: 14px 16px;
+  }
+
+  .bom-calc-hint {
+    margin-left: 0;
+    width: 100%;
+  }
+
   .bom-tab {
     flex: 1;
     text-align: center;

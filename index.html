@@ -329,12 +329,25 @@
               </div>
             </div>
 
+            <!-- เครื่องคำนวณ: จำนวนจาน x ปริมาณต่อจาน (คำนวณใน js/main.js) -->
+            <div class="bom-calc">
+              <label for="bomQty" class="bom-calc-label">ถ้าวันนี้ขายได้</label>
+              <div class="stepper">
+                <button type="button" class="stepper-btn" data-step="-5" aria-label="ลด 5 จาน">−</button>
+                <input id="bomQty" class="stepper-input" type="number" inputmode="numeric" min="0" max="999" step="1" value="50" />
+                <button type="button" class="stepper-btn" data-step="5" aria-label="เพิ่ม 5 จาน">+</button>
+              </div>
+              <span class="bom-calc-unit">จาน</span>
+              <span class="bom-calc-hint">ดูปริมาณที่ต้องเตรียมในคอลัมน์ “ต้องเตรียม”</span>
+            </div>
+
             <div class="bom-table-container">
               <table class="bom-table">
                 <thead>
                   <tr>
                     <th>วัตถุดิบสด</th>
-                    <th>สัดส่วนต่อ 1 จาน</th>
+                    <th>ต่อจาน</th>
+                    <th class="col-total">ต้องเตรียม</th>
                     <th>อายุของสด (Shelf-life)</th>
                     <th>ความเสี่ยงเน่าเสีย</th>
                     <th>วิธีจัดการสต็อก</th>
