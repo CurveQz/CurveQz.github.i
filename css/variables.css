@@ -37,8 +37,8 @@
   width: 58px;
   height: 58px;
   background-color: var(--color-brown-ink);
-  -webkit-mask: url('../assist/github-icon.svg') no-repeat center / contain;
-  mask: url('../assist/github-icon.svg') no-repeat center / contain;
+  -webkit-mask: url('../assets/icons/github.svg') no-repeat center / contain;
+  mask: url('../assets/icons/github.svg') no-repeat center / contain;
   transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
